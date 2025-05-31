@@ -1,0 +1,17 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<h2>Danh sách sản phẩm</h2>
+<div style="display: flex; flex-wrap: wrap;">
+  {% for product in products %}
+    <div style="border: 1px solid #ddd; margin: 10px; padding: 10px; width: 200px;">
+      <a href="{% url 'product_detail' slug=product.slug %}">
+        <img src="{{ product.image.url }}" width="180"><br>
+        <strong>{{ product.name }}</strong><br>
+        Giá: {{ product.price }} đ
+      </a>
+    </div>
+  {% empty %}
+    <p>Chưa có sản phẩm nào.</p>
+  {% endfor %}
+</div>
+{% endblock %}
