@@ -15,7 +15,8 @@ def search(request):
 
 
 def home_view(request):
-    return render(request, 'app/home.html')
+    products = Product.objects.all()
+    return render(request, 'app/home.html', {'products': products})
 
 @login_required
 def my_orders_view(request):
