@@ -28,8 +28,19 @@ class Order(models.Model):
     note = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     status = models.CharField(default="Đang xử lý", max_length=50)
+   
+    def __str__(self):
+        return f"Order #{self.id} - {self.user.username}"
+
+    def get_total(self):
+        return sum(item.get_total_price() for item in self.items.all())
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='items')
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
     quantity = models.PositiveIntegerField()
+    def __str__(self):
+        return f"{self.product} x {self.quantity}"
+
+    def get_total_price(self):
+        return self.product.price * self.quantity if self.product else 0

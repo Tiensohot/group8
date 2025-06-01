@@ -9,6 +9,15 @@
 <body>
   <header>
     <h1>Thực phẩm bổ sung</h1>
+    <div>
+        {% if user.is_authenticated %} 
+            <a href="{% url 'logout' %}">Đăng xuất</a> | 
+            <a href="{% url 'my_orders' %}">Đơn hàng của tôi</a>
+        {% else %}
+            <a href="{% url 'login' %}">Đăng nhập</a> | 
+            <a href="{% url 'register' %}">Đăng ký</a>
+        {% endif %}
+    </div>
     <a href="{% url 'home' %}">Trang chủ</a>
   </header>
   <form action="{% url 'search' %}" method="get" class="flex items-center">
