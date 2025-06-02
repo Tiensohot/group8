@@ -1,25 +1,23 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Supplements Shop</title>
-  <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
-</head>
-<body>
-  <header>
-    <h1>Thực phẩm bổ sung</h1>
-    <div>
-        {% if user.is_authenticated %} 
-            <a href="{% url 'logout' %}">Đăng xuất</a> | 
-            <a href="{% url 'my_orders' %}">Đơn hàng của tôi</a>
-        {% else %}
-            <a href="{% url 'login' %}">Đăng nhập</a> | 
-            <a href="{% url 'register' %}">Đăng ký</a>
-        {% endif %}
-    </div>
-    <a href="{% url 'home' %}">Trang chủ</a>
-  </header>
+<header style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+  <h1>Thực phẩm bổ sung</h1>
+  
+  <div>
+    {% if user.is_authenticated %}
+      <a href="{% url 'my_orders' %}" class="btn btn-link">Đơn hàng của tôi</a> |
+      <a href="{% url 'logout' %}" class="btn btn-link">Đăng xuất</a>
+    {% else %}
+      <a href="{% url 'login' %}" class="btn btn-link">Đăng nhập</a> |
+      <a href="{% url 'register' %}" class="btn btn-link">Đăng ký</a>
+    {% endif %}
+  </div>
+</header>
+<nav style="margin-left: 20px; margin-bottom: 20px;">
+  <a href="{% url 'home' %}">Trang chủ</a>
+</nav>
+
   <form action="{% url 'search' %}" method="get" class="flex items-center">
     <input type="text" name="q" placeholder="Tìm kiếm sản phẩm..." class="border px-2 py-1 rounded">
     <button type="submit" class="ml-2 px-3 py-1 bg-blue-500 text-white rounded">Tìm</button>

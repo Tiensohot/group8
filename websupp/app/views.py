@@ -35,7 +35,9 @@ def register_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('my_orders')
+            redirect_url = request.GET.get('next') or 'home'
+            return redirect(redirect_url)
+
     else:
         form = UserCreationForm()
     return render(request, "app/register.html", {"form": form})
@@ -46,7 +48,9 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('my_orders')
+            redirect_url = request.GET.get('next') or 'home'
+            return redirect(redirect_url)
+
         else:
             messages.error(request, "Tên đăng nhập hoặc mật khẩu không đúng")
     else:
