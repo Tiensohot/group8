@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="text-xl font-bold mb-4">Danh sách đơn hàng</h2>
+
+<table class="table-auto w-full border-collapse">
+    <thead>
+        <tr class="bg-gray-200">
+            <th class="border px-4 py-2">Mã đơn</th>
+            <th class="border px-4 py-2">Người đặt</th>
+            <th class="border px-4 py-2">Địa chỉ</th>
+            <th class="border px-4 py-2">Số điện thoại</th>
+            <th class="border px-4 py-2">Tổng tiền</th>
+            <th class="border px-4 py-2">Ngày đặt</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+        <tr>
+            <td class="border px-4 py-2">{{ order.id }}</td>
+            <td class="border px-4 py-2">{{ order.user.username }}</td>
+            <td class="border px-4 py-2">{{ order.address }}</td>
+            <td class="border px-4 py-2">{{ order.phone }}</td>
+            <td class="border px-4 py-2">{{ order.total_price }}₫</td>
+            <td class="border px-4 py-2">{{ order.created_at }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

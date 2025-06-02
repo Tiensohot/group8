@@ -9,6 +9,51 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Order
+from .form import CheckoutForm
+from .models import Order, OrderItem
+from .cart import Cart
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
+
+@login_required
+def checkout_view(request):
+    cart = Cart(request)
+    if request.method == "POST":
+        form = CheckoutForm(request.POST)
+        if form.is_valid():
+            address = form.cleaned_data['address']
+            phone = form.cleaned_data['phone']
+
+            # 1. Tạo đối tượng Order
+            order = Order.objects.create(
+                user=request.user,
+                address=address,
+                phone=phone,
+                total_price=cart.get_total_price()
+            )
+
+            # 2. Tạo các OrderItem
+            for item in cart:
+                OrderItem.objects.create(
+                    order=order,
+                    product=item['product'],
+                    price=item['price'],
+                    quantity=item['quantity']
+                )
+
+            # 3. Xoá giỏ hàng
+            cart.clear()
+
+            # 4. Gửi thông báo
+            messages.success(request, "Đặt hàng thành công!")
+
+            return redirect('order_detail', order_id=order.id)
+    else:
+        form = CheckoutForm()
+
+    return render(request, 'app/checkout.html', {'form': form, 'cart': cart})
+
 
 def search(request):
     return render(request, 'app/search_results.html')
@@ -88,3 +133,13 @@ def cart_remove(request, product_id):
 def cart_detail(request):
     cart = Cart(request)
     return render(request, 'app/cart_detail.html', {'cart': cart})
+
+@staff_member_required
+def admin_orders_view(request):
+    orders = Order.objects.all().order_by('-created_at')
+    return render(request, 'app/admin_orders.html', {'orders': orders})
+
+def search_view(request):
+    query = request.GET.get('q', '')
+    results = Product.objects.filter(name__icontains=query)
+    return render(request, 'app/search_results.html', {'results': results, 'query': query})

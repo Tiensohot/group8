@@ -20,8 +20,8 @@
   </tr>
   {% endfor %}
 </table>
-<p><strong>Tổng cộng:</stro ng> {{ cart.get_total_price }} đ</p>
-<a href="#">✅ Tiến hành thanh toán</a>
+<p><strong>Tổng cộng:</strong> {{ cart.get_total_price }} đ</p>
+<<a href="{% url 'checkout' %}">✅ Tiến hành thanh toán</a>
 {% else %}
 <p>Giỏ hàng của bạn đang trống.</p>
 {% endif %}

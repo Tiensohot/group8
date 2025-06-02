@@ -1,17 +1,40 @@
+
 {% extends 'app/base.html' %}
+{% load static %}
+
+
 {% block content %}
-<h2>Danh sách sản phẩm</h2>
-<div style="display: flex; flex-wrap: wrap;">
-  {% for product in products %}
-    <div style="border: 1px solid #ddd; margin: 10px; padding: 10px; width: 200px;">
-      <a href="{% url 'product_detail' slug=product.slug %}">
-        <img src="{{ product.image.url }}" width="180"><br>
-        <strong>{{ product.name }}</strong><br>
-        Giá: {{ product.price }} đ
-      </a>
+
+<!-- Hero Section -->
+<section class="hero h-[90vh] bg-black text-white flex flex-col items-center justify-center text-center relative overflow-hidden">
+  <!-- Ảnh nền -->
+  <img src="{% static 'images/hero-bg.jpg' %}"
+     alt="hero background"
+     class="absolute inset-0 w-full h-full object-cover opacity-20 z-0" />
+
+  <!-- Lớp overlay chữ -->
+  <div class="relative z-10">
+    <h1 class="text-6xl font-extrabold tracking-widest text-red-600">STRONG</h1>
+    <p class="mt-6 text-xl font-bold uppercase">Beat the routine. Train at the caliber of world champions</p>
+    <p class="mt-2 text-lg font-light">Get in the best shape of your life.</p>
+  </div>
+</section>
+
+<!-- Product List Section -->
+<section class="py-16 px-4 bg-white dark:bg-gray-900">
+  <h2 class="text-4xl font-bold text-center text-gray-800 dark:text-white mb-12">Danh sách sản phẩm</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    {% for product in products %}
+    <div class="bg-white dark:bg-gray-800 shadow-md rounded-xl overflow-hidden">
+      <img src="{{ product.image.url }}" class="w-full h-48 object-cover" alt="{{ product.name }}">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{{ product.name }}</h3>
+        <p class="text-red-600 mt-2 font-bold">{{ product.price|floatformat:2 }} đ</p>
+        <a href="{% url 'product_detail' product.slug %}" class="mt-4 inline-block text-white bg-red-600 px-4 py-2 rounded hover:bg-red-700">Chi tiết</a>
+      </div>
     </div>
-  {% empty %}
-    <p>Chưa có sản phẩm nào.</p>
-  {% endfor %}
-</div>
+    {% endfor %}
+  </div>
+</section>
+
 {% endblock %}

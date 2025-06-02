@@ -1,13 +1,21 @@
-<h2 class="text-xl mb-4">Kết quả tìm kiếm cho "{{ query }}":</h2>
-<ul>
-    {% for product in results %}
-        <li class="mb-2">
-            <a href="{% url 'product_detail' product.id %}" class="text-blue-600 hover:underline">
-                {{ product.name }}
-            </a>
-            - {{ product.description|truncatechars:50 }}
-        </li>
-    {% empty %}
-        <p>Không tìm thấy sản phẩm nào phù hợp.</p>
-    {% endfor %}
-</ul>
+{% extends 'app/base.html' %}
+
+{% block content %}
+  <div class="p-6">
+    <h2 class="text-2xl font-bold mb-4">Kết quả tìm kiếm cho: "{{ query }}"</h2>
+
+    {% if results %}
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {% for product in results %}
+          <div class="border p-4 rounded shadow bg-white dark:bg-gray-800">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-full h-40 object-cover mb-2">
+            <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{ product.name }}</h3>
+            <p class="text-red-600 font-bold">{{ product.price }} đ</p>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="text-gray-500">Không tìm thấy sản phẩm nào phù hợp.</p>
+    {% endif %}
+  </div>
+{% endblock %}

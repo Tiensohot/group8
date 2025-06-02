@@ -1,44 +1,45 @@
-{% load static %}
 <!DOCTYPE html>
-<html>
-<header style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
-  <h1>Thực phẩm bổ sung</h1>
-  
-  <div>
-    {% if user.is_authenticated %}
-      <a href="{% url 'my_orders' %}" class="btn btn-link">Đơn hàng của tôi</a> |
-      <a href="{% url 'logout' %}" class="btn btn-link">Đăng xuất</a>
-    {% else %}
-      <a href="{% url 'login' %}" class="btn btn-link">Đăng nhập</a> |
-      <a href="{% url 'register' %}" class="btn btn-link">Đăng ký</a>
-    {% endif %}
-  </div>
-</header>
-<nav style="margin-left: 20px; margin-bottom: 20px;">
-  <a href="{% url 'home' %}">Trang chủ</a>
-</nav>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực phẩm bổ sung</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 dark:bg-black text-gray-900 dark:text-white">
 
-  <form action="{% url 'search' %}" method="get" class="flex items-center">
-    <input type="text" name="q" placeholder="Tìm kiếm sản phẩm..." class="border px-2 py-1 rounded">
-    <button type="submit" class="ml-2 px-3 py-1 bg-blue-500 text-white rounded">Tìm</button>
-  </form>
-  {% block content %}{% endblock %}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
- <script>
-    {% if messages %}
-      {% for message in messages %}
-        {% if message.tags == 'error' %}
-          toastr.error("{{ message|escapejs }}");
-        {% elif message.tags == 'warning' %}
-          toastr.warning("{{ message|escapejs }}");
-        {% elif message.tags == 'info' %}
-          toastr.info("{{ message|escapejs }}");
-        {% else %}
-          toastr.success("{{ message|escapejs }}");
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-  </script>
+    <!-- Navbar -->
+    <nav class="bg-white dark:bg-gray-900 shadow p-4 flex flex-wrap justify-between items-center">
+        <!-- Logo -->
+        <a href="{% url 'home' %}" class="text-xl font-bold text-red-600">Supplements</a>
+
+        <!-- Tìm kiếm -->
+        <form action="{% url 'search' %}" method="get" class="flex mt-2 md:mt-0">
+            <input type="text" name="q" placeholder="Tìm kiếm..." class="px-2 py-1 border rounded-l text-black">
+            <button type="submit" class="bg-red-600 text-white px-4 rounded-r">Tìm</button>
+        </form>
+
+        <!-- Auth -->
+        <div class="mt-2 md:mt-0">
+            {% if user.is_authenticated %}
+                <span class="mr-4">Xin chào, {{ user.username }}</span>
+                <a href="{% url 'logout' %}" class="text-sm text-red-500">Đăng xuất</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="mr-4 text-sm text-blue-500">Đăng nhập</a>
+                <a href="{% url 'register' %}" class="text-sm text-blue-500">Đăng ký</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <!-- Nội dung trang con -->
+    <main class="p-6">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-200 dark:bg-gray-800 text-center text-sm py-4 mt-8">
+        © 2025 Thực phẩm bổ sung. All rights reserved.
+    </footer>
 
 </body>
 </html>

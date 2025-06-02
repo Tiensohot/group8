@@ -1,0 +1,9 @@
+<h1>Thanh toán</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <p>Tổng tiền: {{ cart.get_total_price }} đ</p>
+    <button type="submit">Xác nhận đặt hàng</button>
+</form>
