@@ -1,0 +1,14 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<h1 class="text-3xl font-bold mb-6">Blog tư vấn sức khỏe</h1>
+
+<div class="space-y-8">
+    {% for post in posts %}
+    <article class="p-6 bg-white dark:bg-gray-800 rounded shadow">
+        <h2 class="text-xl font-semibold mb-2 text-red-600">{{ post.title }}</h2>
+        <p>{{ post.content }}</p>
+    </article>
+    {% endfor %}
+</div>
+{% endblock %}
