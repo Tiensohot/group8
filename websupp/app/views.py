@@ -15,6 +15,8 @@ from .cart import Cart
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
+import random
+
 
 @login_required
 def checkout_view(request):
@@ -64,7 +66,17 @@ def search(request):
 
 def home_view(request):
     products = Product.objects.all()
-    return render(request, 'app/home.html', {'products': products})
+    featured_products = Product.objects.filter(is_featured=True)[:3]  # nếu có trường is_featured
+    return render(request, 'app/home.html', {
+        'products': products,
+        'featured_products': featured_products
+    })
+
+
+# def home(request):
+#     all_products = list(Product.objects.all())
+#     featured_products = random.sample(all_products, min(3, len(all_products)))
+#     return render(request, 'app/home.html', {'featured_products': featured_products})
 
 @login_required
 def my_orders_view(request):

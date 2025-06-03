@@ -1,7 +1,5 @@
-
 {% extends 'app/base.html' %}
 {% load static %}
-
 
 {% block content %}
 
@@ -20,21 +18,38 @@
   </div>
 </section>
 
-<!-- Product List Section -->
-<section class="py-16 px-4 bg-white dark:bg-gray-900">
-  <h2 class="text-4xl font-bold text-center text-gray-800 dark:text-white mb-12">Danh sách sản phẩm</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-    {% for product in products %}
-    <div class="bg-white dark:bg-gray-800 shadow-md rounded-xl overflow-hidden">
-      <img src="{{ product.image.url }}" class="w-full h-48 object-cover" alt="{{ product.name }}">
-      <div class="p-4">
-        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{{ product.name }}</h3>
-        <p class="text-red-600 mt-2 font-bold">{{ product.price|floatformat:2 }} đ</p>
-        <a href="{% url 'product_detail' product.slug %}" class="mt-4 inline-block text-white bg-red-600 px-4 py-2 rounded hover:bg-red-700">Chi tiết</a>
+<!-- Testimonial Section -->
+<section class="relative h-[70vh] bg-cover bg-center flex items-center justify-center text-center mt-12"
+         style="background-image: url('{% static 'images/testimonial-bg.png' %}');">
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black opacity-50"></div>
+
+  <!-- Text Content -->
+  <div class="relative z-10 max-w-3xl px-8 py-10 bg-black/60 rounded-3xl shadow-2xl backdrop-blur-md text-white">
+    <p class="text-4xl md:text-5xl font-bold mb-6 leading-snug">
+      <span class="text-6xl font-serif text-red-500 align-top">“</span>
+      SINCE STARTING THE OVER 60'S MAT CLASS AT CREATE, I AM MUCH MORE AWARE OF MY BODY, HOW I MOVE AND MY POSTURE.
+      AS A RESULT, I NO LONGER TAKE PAIN MEDICATION FOR MY BACK!
+    </p>
+    <p class="text-base tracking-wider font-light uppercase mt-2">KRYSTINA RYNES, PARK WIMBLEDON</p>
+  </div>
+
+</section>
+<section class="py-16 bg-black text-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-extrabold mb-8 text-center">SẢN PHẨM NỔI BẬT</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {% for product in featured_products %}
+      <div class="bg-gray-900 rounded-2xl shadow-lg p-6 flex flex-col items-center">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-40 h-40 object-contain mb-4">
+        <h3 class="text-xl font-bold mb-2 text-center">{{ product.name }}</h3>
+        <p class="text-lg font-semibold mb-2 text-red-500">{{ product.price|floatformat:0 }}₫</p>
+        <a href="{% url 'product_detail' product.slug %}" class="mt-4 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-5 rounded-lg transition">Xem chi tiết</a>
       </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
 </section>
+
 
 {% endblock %}

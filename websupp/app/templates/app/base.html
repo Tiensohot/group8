@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -7,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 dark:bg-black text-white">
+<body class="bg-gray-100 dark:bg-black text-gray-900 dark:text-white scroll-smooth">
 
 
 <div class="bg-white dark:bg-gray-900 text-black dark:text-white px-8 py-4 flex justify-end items-center space-x-4 shadow">
@@ -44,6 +45,18 @@
                        class="px-2 py-1 border rounded focus:outline-none focus:ring-2 focus:ring-red-500" />
             </form>
         </div>
+        <a href="#"
+           class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold shadow transition text-base">
+            <!-- icon chat -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor">
+                <path d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4-4.03 7-9 7-1.11 0-2.18-.13-3.17-.36A1.99 1.99 0 015 19l-3 1 1-3a2 2 0 01.36-2.17C3.13 14.18 3 13.11 3 12c0-5 5.03-9 9-9s9 4 9 9z"
+                      stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Tư vấn cho tôi
+        </a>
+
+
 
         <!-- Giỏ hàng -->
         {% if user.is_authenticated %}
@@ -58,10 +71,6 @@
     {% block content %}{% endblock %}
 </main>
 
-<!-- Footer -->
-<footer class="bg-gray-200 dark:bg-gray-800 text-center text-sm py-4 mt-8">
-    © 2025 Thực phẩm bổ sung. All rights reserved.
-</footer>
 
 <!-- Script toggle tìm kiếm -->
 <script>
@@ -83,7 +92,7 @@
 
 <!-- Footer -->
 <footer class="bg-gray-200 dark:bg-gray-800 text-center text-sm py-4 mt-8">
-  © 2025 Thực phẩm bổ sung. All rights reserved.
+  © 2025 Thực phẩm bổ sung Created By GROUP AIDS. All rights reserved.
 </footer>
 
 <!-- Thanh công cụ góc dưới màn hình -->
