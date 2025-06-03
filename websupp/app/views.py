@@ -16,7 +16,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 import random
-
+from .models import Product, Review
 
 @login_required
 def checkout_view(request):
@@ -126,11 +126,32 @@ def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug)
     flavors = product.flavor_options.split(",") if product.flavor_options else []
     weights = product.weight_options.split(",") if product.weight_options else []
+    reviews = product.reviews.order_by('-created_at')
+    message = None
+
+    if request.method == "POST" and "review_submit" in request.POST:
+        name = request.POST.get("name", "").strip()
+        rating = request.POST.get("rating")
+        content = request.POST.get("content", "").strip()
+        if name and rating and content:
+            Review.objects.create(
+                product=product,
+                name=name,
+                rating=int(rating),
+                content=content
+            )
+            return redirect('product_detail', slug=product.slug)
+        else:
+            message = "Bạn phải nhập đầy đủ thông tin đánh giá!"
+
     return render(request, 'app/detail.html', {
         'product': product,
         'flavors': flavors,
         'weights': weights,
+        'reviews': reviews,
+        'message': message,
     })
+
 
 def cart_add(request, product_id):
     cart = Cart(request)

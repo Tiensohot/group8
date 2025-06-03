@@ -44,3 +44,11 @@ class OrderItem(models.Model):
 
     def get_total_price(self):
         return self.product.price * self.quantity if self.product else 0
+
+
+class Review(models.Model):
+    product = models.ForeignKey('Product', related_name='reviews', on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    rating = models.PositiveSmallIntegerField(default=5)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
