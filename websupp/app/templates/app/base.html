@@ -40,6 +40,11 @@
     <footer class="bg-gray-200 dark:bg-gray-800 text-center text-sm py-4 mt-8">
         © 2025 Thực phẩm bổ sung. All rights reserved.
     </footer>
+    <!-- Thanh công cụ góc dưới màn hình -->
+    <nav class="fixed bottom-4 right-4 bg-white dark:bg-gray-900 shadow-lg rounded-lg px-4 py-2 flex space-x-6 z-50">
+        <a href="{% url 'home' %}" class="text-gray-800 dark:text-gray-200 font-semibold hover:text-red-600">Home</a>
+        <a href="{% url 'blog' %}" class="text-gray-800 dark:text-gray-200 font-semibold hover:text-red-600">Blog</a>
+    </nav>
 
 </body>
 </html>
