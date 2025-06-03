@@ -54,6 +54,9 @@ def checkout_view(request):
 
     return render(request, 'app/checkout.html', {'form': form, 'cart': cart})
 
+def product_list_view(request):
+    products = Product.objects.all()
+    return render(request, 'app/product_list.html', {'products': products})
 
 def search(request):
     return render(request, 'app/search_results.html')

@@ -1,0 +1,20 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-6">
+    <h1 class="text-2xl font-bold mb-4">Tất cả sản phẩm</h1>
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {% for product in products %}
+        <div class="border rounded p-4 shadow">
+            <a href="{% url 'product_detail' product.slug %}">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-full h-48 object-cover mb-2">
+                <h2 class="text-lg font-semibold">{{ product.name }}</h2>
+                <p class="text-red-600 font-bold">{{ product.price }}₫</p>
+            </a>
+        </div>
+        {% empty %}
+        <p>Không có sản phẩm nào.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
