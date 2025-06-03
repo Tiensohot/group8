@@ -143,3 +143,21 @@ def search_view(request):
     query = request.GET.get('q', '')
     results = Product.objects.filter(name__icontains=query)
     return render(request, 'app/search_results.html', {'results': results, 'query': query})
+
+def blog_view(request):
+    posts = [
+        {
+            'title': 'Lợi ích của việc uống đủ nước mỗi ngày',
+            'content': 'Uống đủ nước giúp duy trì sự cân bằng chất lỏng trong cơ thể, tăng cường năng lượng và cải thiện làn da...',
+        },
+        {
+            'title': 'Tập thể dục đều đặn để tăng cường sức khỏe',
+            'content': 'Tập thể dục giúp cải thiện hệ tim mạch, giảm stress và nâng cao sức đề kháng của cơ thể...',
+        },
+        {
+            'title': 'Chế độ ăn giàu vitamin và khoáng chất',
+            'content': 'Bổ sung rau xanh, hoa quả và các loại hạt giúp cung cấp vitamin và khoáng chất cần thiết cho cơ thể...',
+        },
+    ]
+
+    return render(request, 'app/blog.html', {'posts': posts})
