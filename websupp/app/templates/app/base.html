@@ -1,50 +1,96 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Thực phẩm bổ sung</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 dark:bg-black text-gray-900 dark:text-white">
+<body class="bg-gray-100 dark:bg-black text-white">
 
-    <!-- Navbar -->
-    <nav class="bg-white dark:bg-gray-900 shadow p-4 flex flex-wrap justify-between items-center">
-        <!-- Logo -->
-        <a href="{% url 'home' %}" class="text-xl font-bold text-red-600">Supplements</a>
 
-        <!-- Tìm kiếm -->
-        <form action="{% url 'search' %}" method="get" class="flex mt-2 md:mt-0">
-            <input type="text" name="q" placeholder="Tìm kiếm..." class="px-2 py-1 border rounded-l text-black">
-            <button type="submit" class="bg-red-600 text-white px-4 rounded-r">Tìm</button>
-        </form>
+<div class="bg-white dark:bg-gray-900 text-black dark:text-white px-8 py-4 flex justify-end items-center space-x-4 shadow">
+    {% if user.is_authenticated %}
+        <span>Xin chào, {{ user.username }}</span>
+        <a href="{% url 'logout' %}" class="text-sm text-red-500">Đăng xuất</a>
+    {% else %}
+        <a href="{% url 'login' %}" class="text-sm text-blue-500">Đăng nhập</a>
+        <a href="{% url 'register' %}" class="text-sm text-blue-500">Đăng ký</a>
+    {% endif %}
+</div>
 
-        <!-- Auth -->
-        <div class="mt-2 md:mt-0">
-            {% if user.is_authenticated %}
-                <span class="mr-4">Xin chào, {{ user.username }}</span>
-                <a href="{% url 'logout' %}" class="text-sm text-red-500">Đăng xuất</a>
-            {% else %}
-                <a href="{% url 'login' %}" class="mr-4 text-sm text-blue-500">Đăng nhập</a>
-                <a href="{% url 'register' %}" class="text-sm text-blue-500">Đăng ký</a>
-            {% endif %}
+
+<nav class="bg-black bg-opacity-70 px-8 py-4 flex justify-between items-center">
+    <!-- Logo trái -->
+    <a href="{% url 'home' %}" class="text-xl font-bold text-red-500">Supplements</a>
+
+    <!-- Menu phải: Shop, kính lúp, giỏ hàng -->
+    <div class="flex items-center space-x-6">
+        <a href="{% url 'product_list' %}" class="hover:text-red-400 font-semibold">Shop</a>
+
+        <!-- Kính lúp -->
+        <div class="relative">
+            <button id="toggleSearch" type="button" aria-label="Toggle search">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" 
+                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" 
+                          d="M21 21l-4.35-4.35M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" />
+                </svg>
+            </button>
+            <form id="searchForm" action="{% url 'search' %}" method="get" 
+                  class="absolute right-0 top-8 hidden bg-white text-black p-2 rounded shadow z-50">
+                <input type="text" name="q" placeholder="Tìm kiếm..." 
+                       class="px-2 py-1 border rounded focus:outline-none focus:ring-2 focus:ring-red-500" />
+            </form>
         </div>
-    </nav>
 
-    <!-- Nội dung trang con -->
-    <main class="p-6">
-        {% block content %}{% endblock %}
-    </main>
+        <!-- Giỏ hàng -->
+        {% if user.is_authenticated %}
+            <a href="{% url 'my_orders' %}" class="text-xl hover:text-green-400" aria-label="Giỏ hàng">🛒</a>
+        {% endif %}
+    </div>
+</nav>
 
-    <!-- Footer -->
-    <footer class="bg-gray-200 dark:bg-gray-800 text-center text-sm py-4 mt-8">
-        © 2025 Thực phẩm bổ sung. All rights reserved.
-    </footer>
-    <!-- Thanh công cụ góc dưới màn hình -->
-    <nav class="fixed bottom-4 right-4 bg-white dark:bg-gray-900 shadow-lg rounded-lg px-4 py-2 flex space-x-6 z-50">
-        <a href="{% url 'home' %}" class="text-gray-800 dark:text-gray-200 font-semibold hover:text-red-600">Home</a>
-        <a href="{% url 'blog' %}" class="text-gray-800 dark:text-gray-200 font-semibold hover:text-red-600">Blog</a>
-    </nav>
+
+<!-- Nội dung trang -->
+<main class="p-6 bg-white dark:bg-black text-black dark:text-white min-h-[60vh]">
+    {% block content %}{% endblock %}
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-200 dark:bg-gray-800 text-center text-sm py-4 mt-8">
+    © 2025 Thực phẩm bổ sung. All rights reserved.
+</footer>
+
+<!-- Script toggle tìm kiếm -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.getElementById("toggleSearch");
+        const searchForm = document.getElementById("searchForm");
+
+        toggleBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            searchForm.classList.toggle("hidden");
+        });
+<script>
+    document.addEventListener("click", function (e) {
+        if (!searchForm.contains(e.target)) {
+            searchForm.classList.add("hidden");
+        }
+    });
+</script>
+
+<!-- Footer -->
+<footer class="bg-gray-200 dark:bg-gray-800 text-center text-sm py-4 mt-8">
+  © 2025 Thực phẩm bổ sung. All rights reserved.
+</footer>
+
+<!-- Thanh công cụ góc dưới màn hình -->
+<nav class="fixed bottom-4 right-4 bg-white dark:bg-gray-900 shadow-lg rounded-lg px-4 py-2 flex space-x-6 z-50">
+  <a href="{% url 'home' %}" class="text-gray-800 dark:text-gray-200 font-semibold hover:text-red-600">Home</a>
+  <a href="{% url 'blog' %}" class="text-gray-800 dark:text-gray-200 font-semibold hover:text-red-600">Blog</a>
+</nav>
 
 </body>
 </html>
