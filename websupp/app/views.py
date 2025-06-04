@@ -3,7 +3,6 @@ from .models import Product
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import get_object_or_404, redirect
 from .cart import Cart
-from .models import Product
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
@@ -11,14 +10,60 @@ from django.contrib.auth.decorators import login_required
 from .models import Order
 from .form import CheckoutForm
 from .models import Order, OrderItem
-from .cart import Cart
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 import random
 from .models import Product, Review
-from django.urls import reverse
+from django.urls import reverse #dong xung dot
 
+
+import requests
+import json
+from django.shortcuts import redirect
+from django.conf import settings
+
+def momo_payment_view(request, order_id):
+    order = Order.objects.get(id=order_id, user=request.user)
+    endpoint = "https://test-payment.momo.vn/v2/gateway/api/create"
+    partnerCode = settings.MOMO_PARTNER_CODE
+    accessKey = settings.MOMO_ACCESS_KEY
+    secretKey = settings.MOMO_SECRET_KEY
+    returnUrl = request.build_absolute_uri('/momo_return/')
+    notifyUrl = request.build_absolute_uri('/momo_notify/')
+
+    requestId = str(order.id)
+    amount = str(int(order.total_price))
+    orderInfo = "Thanh toán đơn hàng #" + str(order.id)
+    extraData = ""
+
+    raw_signature = f"accessKey={accessKey}&amount={amount}&extraData={extraData}&ipnUrl={notifyUrl}&orderId={requestId}&orderInfo={orderInfo}&partnerCode={partnerCode}&redirectUrl={returnUrl}&requestId={requestId}&requestType=captureWallet"
+    # tạo chữ ký bằng HMAC SHA256 theo secretKey (đoạn này bạn cần dùng thư viện hmac)
+    import hmac, hashlib
+    signature = hmac.new(secretKey.encode(), raw_signature.encode(), hashlib.sha256).hexdigest()
+
+    data = {
+        "partnerCode": partnerCode,
+        "accessKey": accessKey,
+        "requestId": requestId,
+        "amount": amount,
+        "orderId": requestId,
+        "orderInfo": orderInfo,
+        "redirectUrl": returnUrl,
+        "ipnUrl": notifyUrl,
+        "extraData": extraData,
+        "requestType": "captureWallet",
+        "signature": signature,
+    }
+
+    headers = {'Content-Type': 'application/json'}
+    response = requests.post(endpoint, json=data, headers=headers)
+    result = response.json()
+    if result.get('payUrl'):
+        return redirect(result['payUrl'])
+    else:
+        messages.error(request, "Không thể kết nối ví MoMo, vui lòng thử lại sau.")
+        return redirect('checkout')
 
 @login_required
 def checkout_view(request):
@@ -28,12 +73,14 @@ def checkout_view(request):
         if form.is_valid():
             address = form.cleaned_data['address']
             phone = form.cleaned_data['phone']
+            payment_method = form.cleaned_data['payment_method']
 
-            # 1. Tạo đối tượng Order
+            # 1. Tạo đối tượng Order, thêm trường payment_method
             order = Order.objects.create(
                 user=request.user,
                 address=address,
                 phone=phone,
+                payment_method=payment_method,
                 total_price=cart.get_total_price()
             )
 
@@ -49,10 +96,15 @@ def checkout_view(request):
             # 3. Xoá giỏ hàng
             cart.clear()
 
-            # 4. Gửi thông báo
-            messages.success(request, "Đặt hàng thành công!")
-
-            return redirect('order_detail', order_id=order.id)
+            # 4. Xử lý theo phương thức thanh toán
+            if payment_method == 'momo':
+                return redirect('momo_payment', order_id=order.id)  # giả sử bạn có url name là 'momo_payment'
+            elif payment_method == 'bank':
+                messages.info(request, "Vui lòng chuyển khoản theo thông tin trên đơn hàng.")
+                return redirect('order_detail', order_id=order.id)
+            else:  # COD
+                messages.success(request, "Đặt hàng thành công! Vui lòng chuẩn bị tiền khi nhận hàng.")
+                return redirect('order_detail', order_id=order.id)
     else:
         form = CheckoutForm()
 
