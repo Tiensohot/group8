@@ -17,6 +17,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 import random
 from .models import Product, Review
+from django.urls import reverse
+
 
 @login_required
 def checkout_view(request):
@@ -158,7 +160,8 @@ def cart_add(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     quantity = int(request.POST.get('quantity', 1))
     cart.add(product, quantity)
-    return redirect('cart_detail')
+    product_url = reverse('product_detail', args=[product.slug])
+    return redirect(f"{product_url}?added=true")
 
 def cart_remove(request, product_id):
     cart = Cart(request)

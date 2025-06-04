@@ -35,10 +35,11 @@ class Cart:
         product_ids = self.cart.keys()
         products = Product.objects.filter(id__in=product_ids)
         for product in products:
-            cart_item = self.cart[str(product.id)]
+            cart_item = self.cart[str(product.id)].copy()
             cart_item['product'] = product
             cart_item['total_price'] = Decimal(cart_item['price']) * cart_item['quantity']
             yield cart_item
+
 
     def __len__(self):
         return sum(item['quantity'] for item in self.cart.values())

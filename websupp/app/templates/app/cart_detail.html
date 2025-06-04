@@ -1,28 +1,51 @@
 {% extends 'app/base.html' %}
 {% block content %}
-<h2>🛒 Giỏ hàng</h2>
-{% if cart %}
-<table>
-  <tr>
-    <th>Sản phẩm</th>
-    <th>Số lượng</th>
-    <th>Đơn giá</th>
-    <th>Thành tiền</th>
-    <th></th>
-  </tr>
-  {% for item in cart %}
-  <tr>
-    <td>{{ item.product.name }}</td>
-    <td>{{ item.quantity }}</td>
-    <td>{{ item.price }} đ</td>
-    <td>{{ item.total_price }} đ</td>
-    <td><a href="{% url 'cart_remove' item.product.id %}">❌</a></td>
-  </tr>
-  {% endfor %}
-</table>
-<p><strong>Tổng cộng:</strong> {{ cart.get_total_price }} đ</p>
-<<a href="{% url 'checkout' %}">✅ Tiến hành thanh toán</a>
+<h2 class="text-3xl font-bold mb-6 flex items-center gap-2">🛒 Giỏ hàng của bạn</h2>
+
+{% if cart|length %}
+<form method="post" action="{% url 'checkout' %}" class="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+  {% csrf_token %}
+  <table class="w-full text-left border-collapse">
+    <thead>
+      <tr class="border-b border-gray-300 dark:border-gray-600">
+        <th class="py-3 px-4 w-12"></th> <!-- checkbox -->
+        <th class="py-3 px-4">Sản phẩm</th>
+        <th class="py-3 px-4 text-center w-24">Số lượng</th>
+        <th class="py-3 px-4 text-right w-32">Đơn giá</th>
+        <th class="py-3 px-4 text-right w-36">Thành tiền</th>
+        <th class="py-3 px-4 w-12"></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in cart %}
+      <tr class="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
+        <td class="py-3 px-4 text-center">
+          <input type="checkbox" name="selected_products" value="{{ item.product.id }}" checked
+                 class="w-5 h-5 text-red-500 focus:ring-red-400 rounded">
+        </td>
+        <td class="py-3 px-4 font-semibold text-gray-900 dark:text-gray-100">{{ item.product.name }}</td>
+        <td class="py-3 px-4 text-center text-gray-700 dark:text-gray-300">{{ item.quantity }}</td>
+        <td class="py-3 px-4 text-right text-red-600 font-mono">{{ item.price }} đ</td>
+        <td class="py-3 px-4 text-right font-semibold text-green-600">{{ item.total_price }} đ</td>
+        <td class="py-3 px-4 text-center">
+          <a href="{% url 'cart_remove' item.product.id %}" title="Xóa sản phẩm"
+             class="text-gray-400 hover:text-red-600 transition">❌</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="mt-6 flex justify-between items-center">
+    <p class="text-xl font-bold text-gray-800 dark:text-gray-200">Tổng cộng: <span class="text-red-600">{{ cart.get_total_price }} đ</span></p>
+    <button type="submit"
+            class="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-2 rounded shadow-md transition">
+      ✅ Tiến hành thanh toán
+    </button>
+  </div>
+</form>
+
 {% else %}
-<p>Giỏ hàng của bạn đang trống.</p>
+<p class="text-center text-gray-500 dark:text-gray-400 mt-12 text-lg">Giỏ hàng của bạn đang trống.</p>
 {% endif %}
 {% endblock %}
