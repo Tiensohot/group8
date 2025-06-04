@@ -1,7 +1,17 @@
 {% extends 'app/base.html' %}
 {% load custom_filters %}
 {% block content %}
-
+{% if request.GET.added == 'true' %}
+<div 
+    x-data="{ show: true }" 
+    x-init="setTimeout(() => show = false, 3000)" 
+    x-show="show"
+    x-transition
+    class="fixed top-5 right-5 bg-green-500 text-white px-4 py-2 rounded shadow-lg z-50"
+>
+    ✅ Sản phẩm đã được thêm vào giỏ hàng!
+</div>
+{% endif %}
 <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 py-12 px-4">
     <!-- Ảnh sản phẩm -->
     <div class="flex flex-col items-center">

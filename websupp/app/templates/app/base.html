@@ -27,8 +27,10 @@
     <!-- Logo trái -->
     <a href="{% url 'home' %}" class="text-xl font-bold text-red-500">Supplements</a>
 
-    <!-- Menu phải: Shop, kính lúp, giỏ hàng -->
+    <!-- Menu phải: Home, Blog, Shop, kính lúp, giỏ hàng -->
     <div class="flex items-center space-x-6">
+        <a href="{% url 'home' %}" class="hover:text-red-400 font-semibold">Home</a>
+        <a href="{% url 'blog' %}" class="hover:text-red-400 font-semibold">Blog</a>
         <a href="{% url 'product_list' %}" class="hover:text-red-400 font-semibold">Shop</a>
 
         <!-- Kính lúp -->
@@ -46,6 +48,8 @@
                        class="px-2 py-1 border rounded focus:outline-none focus:ring-2 focus:ring-red-500" />
             </form>
         </div>
+
+        <!-- Tư vấn -->
         <a href="#"
            class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold shadow transition text-base">
             <!-- icon chat -->
@@ -56,8 +60,6 @@
             </svg>
             Tư vấn cho tôi
         </a>
-
-
 
         <!-- Giỏ hàng -->
         {% if user.is_authenticated %}
@@ -83,11 +85,12 @@
             e.stopPropagation();
             searchForm.classList.toggle("hidden");
         });
-<script>
-    document.addEventListener("click", function (e) {
-        if (!searchForm.contains(e.target)) {
-            searchForm.classList.add("hidden");
-        }
+
+        document.addEventListener("click", function (e) {
+            if (!searchForm.contains(e.target)) {
+                searchForm.classList.add("hidden");
+            }
+        });
     });
 </script>
 
@@ -96,11 +99,12 @@
   © 2025 Thực phẩm bổ sung Created By GROUP AIDS. All rights reserved.
 </footer>
 
-<!-- Thanh công cụ góc dưới màn hình -->
-<nav class="fixed bottom-4 right-4 bg-white dark:bg-gray-900 shadow-lg rounded-lg px-4 py-2 flex space-x-6 z-50">
-  <a href="{% url 'home' %}" class="text-gray-800 dark:text-gray-200 font-semibold hover:text-red-600">Home</a>
-  <a href="{% url 'blog' %}" class="text-gray-800 dark:text-gray-200 font-semibold hover:text-red-600">Blog</a>
-</nav>
+<!-- Icon giỏ hàng ở giữa bên phải -->
+<a href="{% url 'cart_detail' %}" 
+   class="fixed top-1/2 right-4 transform -translate-y-1/2 bg-red-500 hover:bg-red-600 text-white rounded-full p-4 shadow-lg z-50"
+   title="Xem giỏ hàng">
+  🛒
+</a>
 
 </body>
 </html>
