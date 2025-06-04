@@ -108,8 +108,20 @@ def checkout_view(request):
     return render(request, 'app/checkout.html', {'form': form, 'cart': cart})
 
 def product_list_view(request):
-    products = Product.objects.all()
-    return render(request, 'app/product_list.html', {'products': products})
+    sort = request.GET.get('sort', '')  # lấy param sort từ URL, ví dụ ?sort=price_asc hoặc ?sort=newest
+
+    if sort == 'price_asc':
+        products = Product.objects.all().order_by('price')
+    elif sort == 'newest':
+        products = Product.objects.all().order_by('-created_at')
+    else:
+        products = Product.objects.all()
+
+    return render(request, 'app/product_list.html', {
+        'products': products,
+        'current_sort': sort,
+    })
+
 
 def search(request):
     return render(request, 'app/search_results.html')
