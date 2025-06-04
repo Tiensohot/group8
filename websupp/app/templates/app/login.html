@@ -1,11 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<h2>Đăng nhập</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Đăng nhập</button>
-</form>
-<a href="{% url 'register' %}">Chưa có tài khoản? Đăng ký</a>
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      position: relative;
+    }
 
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("{% static 'images/gym.jpg' %}") no-repeat center center fixed;
+      background-size: cover;
+      filter: blur(8px) brightness(0.5);
+      z-index: -2;
+    }
 
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+      z-index: -1;
+    }
 
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 20px;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 40px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+      color: white;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      border: 4px solid #c62828;
+      position: relative;
+      z-index: 1;
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .overlay h2 {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .overlay form p {
+      margin-bottom: 20px;
+    }
+
+    .overlay label {
+      display: block;
+      margin-bottom: 5px;
+      color: #ccc;
+    }
+
+    .overlay input {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      background: transparent;
+      color: white;
+      font-size: 16px;
+    }
+
+    .overlay input:focus {
+      outline: none;
+      border-bottom: 2px solid #f44336;
+    }
+
+    .overlay button {
+      width: 100%;
+      padding: 12px;
+      background-color: #f44336;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .overlay a {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #2196f3;
+      text-decoration: none;
+    }
+
+    .errors {
+      background: #ffebee;
+      color: #c62828;
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 500px) {
+      .overlay {
+        padding: 25px;
+        font-size: 14px;
+      }
+
+      .overlay h2 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="overlay">
+      <h2>Đăng nhập</h2>
+
+      {% if form.errors %}
+        <div class="errors">
+          Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng thử lại.
+        </div>
+      {% endif %}
+
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Đăng nhập</button>
+      </form>
+
+      <a href="{% url 'register' %}">Chưa có tài khoản? Đăng ký</a>
+    </div>
+  </div>
+</body>
+</html>
