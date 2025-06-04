@@ -1,5 +1,6 @@
 from djongo import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
@@ -17,6 +18,7 @@ class Product(models.Model):
     flavor_options = models.CharField(max_length=300, blank=True)  # ví dụ: "Vanilla, Chocolate"
     weight_options = models.CharField(max_length=200, blank=True)  # ví dụ: "5lbs, 10lbs"
     is_featured = models.BooleanField(default=False)
+    created_at = models.DateTimeField(default=timezone.now)
     def __str__(self):
         return self.name
 
