@@ -1,8 +1,17 @@
 from django import forms
 
 class CheckoutForm(forms.Form):
-    address = forms.CharField(label="Địa chỉ nhận hàng", max_length=255)
-    phone = forms.CharField(label="Số điện thoại", max_length=20)
+    address = forms.CharField(max_length=255, required=True)
+    phone = forms.CharField(max_length=20, required=True)
+    payment_method = forms.ChoiceField(
+        choices=[
+            ('cod', 'Thanh toán khi nhận hàng (COD)'),
+            ('momo', 'Ví MoMo'),
+            ('bank', 'Chuyển khoản ngân hàng'),
+        ],
+        widget=forms.RadioSelect,
+        required=True
+    )
 
 from .models import Review
 

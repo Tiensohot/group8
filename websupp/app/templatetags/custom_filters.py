@@ -9,3 +9,7 @@ def split_by(value, delimiter=','):
 @register.filter
 def trim(value):
     return value.strip()
+
+@register.filter(name='add_class')
+def add_class(field, css):
+    return field.as_widget(attrs={"class": css})
