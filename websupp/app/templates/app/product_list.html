@@ -1,15 +1,32 @@
 {% extends 'app/base.html' %}
+{% load static %}
 {% block content %}
 {% load custom_filters %}
-<form method="get" class="mb-4">
-    <label for="sort">Sắp xếp theo:</label>
-    <select name="sort" id="sort" onchange="this.form.submit()">
-        <option value="" {% if not current_sort %}selected{% endif %}>Mặc định</option>
-        <option value="newest" {% if current_sort == 'newest' %}selected{% endif %}>Mới nhất</option>
-        <option value="price_asc" {% if current_sort == 'price_asc' %}selected{% endif %}>Giá thấp đến cao</option>
-    </select>
-</form>
-<div class="max-w-7xl mx-auto px-4 py-10">
+
+<style>
+    .background-container {
+      position: relative;
+      min-height: 100vh;
+      padding: 2rem;
+      overflow: hidden;
+      z-index: 0;
+    }
+    
+    /* Tạo layer nền riêng và làm mờ */
+    .background-container::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url("{% static 'images/testimonial-bg.png' %}");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      filter: blur(8px);
+      z-index: -1;
+    }
+    </style>
+
+<div class="background-container max-w-7xl mx-auto px-4 py-10">
     <h1 class="text-3xl font-extrabold mb-4 text-center">Tất cả sản phẩm</h1>
     
     <!-- Dropdown chọn sắp xếp -->
@@ -37,4 +54,5 @@
         {% endfor %}
     </div>
 </div>
+
 {% endblock %}
