@@ -1,0 +1,10 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto px-4 py-10">
+    <h1 class="text-3xl font-bold text-red-600 mb-6">{{ post.title }}</h1>
+    <img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-64 object-cover rounded mb-6">
+    <p class="text-gray-800 text-lg leading-relaxed whitespace-pre-line">{{ post.content }}</p>
+    <a href="{% url 'blog' %}" class="mt-8 inline-block text-blue-600 hover:underline">← Quay lại danh sách</a>
+</div>
+{% endblock %}
