@@ -1,21 +1,34 @@
 {% extends 'app/base.html' %}
+{% load static %}
 
 {% block content %}
-  <div class="p-6">
-    <h2 class="text-2xl font-bold mb-4">Kết quả tìm kiếm cho: "{{ query }}"</h2>
+  <h2 class="mb-8 text-center text-3xl font-bold text-white drop-shadow-lg">
+    Kết quả tìm kiếm cho: "{{ query }}"
+  </h2>
 
+  <!-- Ảnh nền phủ toàn màn hình -->
+  <div class="fixed inset-0 -z-30">
+    <img src="{% static 'images/gym.jpg' %}" alt="Background" 
+         class="w-full h-full object-cover filter blur-md brightness-50" />
+  </div>
+  <!-- Overlay đen mờ tăng độ tương phản -->
+  <div class="fixed inset-0 bg-black bg-opacity-60 -z-20"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 py-12">
     {% if results %}
-      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {% for product in results %}
-          <div class="border p-4 rounded shadow bg-white dark:bg-gray-800">
-            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-full h-40 object-cover mb-2">
-            <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{ product.name }}</h3>
-            <p class="text-red-600 font-bold">{{ product.price }} đ</p>
+          <div class="bg-white bg-opacity-90 rounded-lg shadow-lg p-5 hover:shadow-2xl transition cursor-pointer">
+            <a href="{% url 'product_detail' product.slug %}" class="flex flex-col items-center">
+              <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-full h-48 object-contain mb-4 rounded-md" />
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ product.name }}</h3>
+              <p class="text-red-600 font-extrabold text-lg">{{ product.price|floatformat:0 }} đ</p>
+            </a>
           </div>
         {% endfor %}
       </div>
     {% else %}
-      <p class="text-gray-500">Không tìm thấy sản phẩm nào phù hợp.</p>
+      <p class="text-center text-white text-xl font-medium">Không tìm thấy sản phẩm nào phù hợp.</p>
     {% endif %}
   </div>
 {% endblock %}
