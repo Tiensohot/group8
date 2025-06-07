@@ -1,5 +1,7 @@
 {% extends 'app/base.html' %}
 {% block content %}
+{% include 'components/chat_widget.html' %}
+
 <h2 class="text-3xl font-bold mb-6 flex items-center gap-2">🛒 Giỏ hàng của bạn</h2>
 
 {% if cart|length %}
