@@ -75,30 +75,48 @@ def checkout_view(request):
             phone = form.cleaned_data['phone']
             payment_method = form.cleaned_data['payment_method']
 
-            # 1. Tạo đối tượng Order, thêm trường payment_method
+            selected_ids = request.POST.getlist('selected_products')
+            print("Selected product IDs:", selected_ids)  # <-- Thêm dòng này để debug
+
+            total_price = 0
+
+            # Kiểm tra có sản phẩm nào được chọn không
+            if not selected_ids:
+                messages.warning(request, "Bạn phải chọn ít nhất 1 sản phẩm để thanh toán.")
+                return redirect('cart_detail')
+
+            # Tính tổng tiền cho sản phẩm được chọn
+            for item in cart:
+                if str(item['product'].id) in selected_ids:
+                    total_price += item['total_price']
+
+            if total_price == 0:
+                messages.warning(request, "Bạn phải chọn ít nhất 1 sản phẩm có số lượng lớn hơn 0.")
+                return redirect('cart_detail')
+
+            # Tạo order sau khi đã tính tổng tiền
             order = Order.objects.create(
                 user=request.user,
                 address=address,
                 phone=phone,
                 payment_method=payment_method,
-                total_price=cart.get_total_price()
+                total_price=total_price
             )
 
-            # 2. Tạo các OrderItem
+            # Tạo OrderItem
             for item in cart:
-                OrderItem.objects.create(
-                    order=order,
-                    product=item['product'],
-                    price=item['price'],
-                    quantity=item['quantity']
-                )
+                if str(item['product'].id) in selected_ids:
+                    OrderItem.objects.create(
+                        order=order,
+                        product=item['product'],
+                        price=item['price'],
+                        quantity=item['quantity']
+                    )
 
-            # 3. Xoá giỏ hàng
             cart.clear()
 
-            # 4. Xử lý theo phương thức thanh toán
             if payment_method == 'momo':
-                return redirect('momo_payment', order_id=order.id)  # giả sử bạn có url name là 'momo_payment'
+                return redirect('momo_payment', order_id=order.id)
             elif payment_method == 'bank':
                 messages.info(request, "Vui lòng chuyển khoản theo thông tin trên đơn hàng.")
                 return redirect('order_detail', order_id=order.id)
