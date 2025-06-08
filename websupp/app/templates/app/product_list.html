@@ -1,8 +1,6 @@
 {% extends 'app/base.html' %}
 {% block content %}
 {% load custom_filters %}
-{% include 'components/chat_widget.html' %}
-
 <form method="get" class="mb-4">
     <label for="sort">Sắp xếp theo:</label>
     <select name="sort" id="sort" onchange="this.form.submit()">

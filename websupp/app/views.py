@@ -75,30 +75,48 @@ def checkout_view(request):
             phone = form.cleaned_data['phone']
             payment_method = form.cleaned_data['payment_method']
 
-            # 1. Tạo đối tượng Order, thêm trường payment_method
+            selected_ids = request.POST.getlist('selected_products')
+            print("Selected product IDs:", selected_ids)  # <-- Thêm dòng này để debug
+
+            total_price = 0
+
+            # Kiểm tra có sản phẩm nào được chọn không
+            if not selected_ids:
+                messages.warning(request, "Bạn phải chọn ít nhất 1 sản phẩm để thanh toán.")
+                return redirect('cart_detail')
+
+            # Tính tổng tiền cho sản phẩm được chọn
+            for item in cart:
+                if str(item['product'].id) in selected_ids:
+                    total_price += item['total_price']
+
+            if total_price == 0:
+                messages.warning(request, "Bạn phải chọn ít nhất 1 sản phẩm có số lượng lớn hơn 0.")
+                return redirect('cart_detail')
+
+            # Tạo order sau khi đã tính tổng tiền
             order = Order.objects.create(
                 user=request.user,
                 address=address,
                 phone=phone,
                 payment_method=payment_method,
-                total_price=cart.get_total_price()
+                total_price=total_price
             )
 
-            # 2. Tạo các OrderItem
+            # Tạo OrderItem
             for item in cart:
-                OrderItem.objects.create(
-                    order=order,
-                    product=item['product'],
-                    price=item['price'],
-                    quantity=item['quantity']
-                )
+                if str(item['product'].id) in selected_ids:
+                    OrderItem.objects.create(
+                        order=order,
+                        product=item['product'],
+                        price=item['price'],
+                        quantity=item['quantity']
+                    )
 
-            # 3. Xoá giỏ hàng
             cart.clear()
 
-            # 4. Xử lý theo phương thức thanh toán
             if payment_method == 'momo':
-                return redirect('momo_payment', order_id=order.id)  # giả sử bạn có url name là 'momo_payment'
+                return redirect('momo_payment', order_id=order.id)
             elif payment_method == 'bank':
                 messages.info(request, "Vui lòng chuyển khoản theo thông tin trên đơn hàng.")
                 return redirect('order_detail', order_id=order.id)
@@ -246,21 +264,86 @@ def search_view(request):
     query = request.GET.get('q', '')
     results = Product.objects.filter(name__icontains=query)
     return render(request, 'app/search_results.html', {'results': results, 'query': query})
+POSTS = [
+    {
+        'id': 1,
+        'title': 'Lợi ích của việc uống đủ nước mỗi ngày',
+        'content': '''
+Uống đủ nước không chỉ giúp cơ thể duy trì cân bằng chất lỏng mà còn cải thiện chức năng não bộ, hỗ trợ tiêu hóa và giúp làn da khỏe mạnh.
+
+Nước đóng vai trò quan trọng trong việc vận chuyển chất dinh dưỡng, điều hòa nhiệt độ cơ thể và loại bỏ độc tố. Nếu bạn thường xuyên cảm thấy mệt mỏi, đau đầu hoặc khô da, có thể cơ thể bạn đang thiếu nước.
+
+Hãy bắt đầu ngày mới với một ly nước ấm và duy trì thói quen uống khoảng 2 lít nước mỗi ngày để cải thiện sức khỏe toàn diện.
+''',
+        'image': 'https://sasukegym.vn/wp-content/uploads/2021/03/vai-tro-nuoc-voi-nguoi-tap-the-hinh.jpg',
+    },
+    {
+        'id': 2,
+        'title': 'Tập thể dục đều đặn để tăng cường sức khỏe',
+        'content': '''
+Tập thể dục giúp giảm nguy cơ mắc các bệnh mãn tính như tiểu đường, tim mạch, béo phì, đồng thời cải thiện tinh thần và giấc ngủ.
+
+Bạn không cần phải đến phòng gym mỗi ngày. Đi bộ nhanh, đạp xe, nhảy dây, yoga hay thậm chí là lau nhà cũng đều mang lại lợi ích. Điều quan trọng là duy trì thói quen vận động ít nhất 30 phút mỗi ngày.
+
+Hãy lựa chọn môn thể thao bạn yêu thích để việc rèn luyện trở nên thú vị và bền vững hơn.
+''',
+        'image': 'https://images.unsplash.com/photo-1558611848-73f7eb4001a1',
+    },
+    {
+        'id': 3,
+        'title': 'Chế độ ăn giàu vitamin và khoáng chất',
+        'content': '''
+Một chế độ ăn đa dạng với rau củ, trái cây, ngũ cốc nguyên hạt và các loại hạt sẽ giúp cung cấp đầy đủ vitamin và khoáng chất cần thiết cho cơ thể.
+
+Vitamin C từ cam, chanh giúp tăng sức đề kháng. Sắt trong rau bina hỗ trợ sản sinh hồng cầu. Omega-3 trong cá giúp não bộ hoạt động tốt hơn.
+
+Hãy ưu tiên thực phẩm tự nhiên, hạn chế đồ chế biến sẵn và duy trì bữa ăn đều đặn mỗi ngày.
+''',
+        'image': 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c',
+    },
+    {
+        'id': 4,
+        'title': 'Ngủ đủ giấc – Bí quyết vàng cho sức khỏe toàn diện',
+        'content': '''
+Giấc ngủ giúp cơ thể hồi phục, cân bằng hormone và tái tạo tế bào. Người lớn nên ngủ từ 7–9 tiếng mỗi đêm để đảm bảo sức khỏe thể chất và tinh thần.
+
+Thiếu ngủ có thể dẫn đến béo phì, giảm trí nhớ, lo âu và nhiều bệnh mãn tính khác. Hãy tạo một môi trường ngủ yên tĩnh, tránh ánh sáng xanh từ điện thoại trước giờ ngủ.
+
+Một giấc ngủ chất lượng là nền tảng cho một cơ thể khỏe mạnh.
+''',
+        'image': 'https://cdn.nhathuoclongchau.com.vn/unsafe/800x0/https://cms-prod.s3-sgn09.fptcloud.com/ngu_du_giac_bi_quyet_tang_cuong_suc_khoe_the_va_tinh_than_3_6bf4ce11c9.png',
+    },
+    {
+        'id': 5,
+        'title': 'Thư giãn và giảm stress bằng thiền và hít thở sâu',
+        'content': '''
+Căng thẳng kéo dài ảnh hưởng đến hệ miễn dịch, huyết áp và tâm trạng. Thiền và hít thở sâu là hai phương pháp đơn giản giúp bạn thư giãn tinh thần và phục hồi năng lượng.
+
+Dành 10 phút mỗi ngày để tập trung vào hơi thở, loại bỏ suy nghĩ tiêu cực và sống trọn vẹn với hiện tại. Bạn có thể kết hợp nghe nhạc nhẹ, ngồi ở nơi yên tĩnh hoặc ra ngoài thiên nhiên.
+
+Thói quen thư giãn thường xuyên giúp bạn sống cân bằng và hạnh phúc hơn.
+''',
+        'image': 'https://vttu.edu.vn/wp-content/uploads/2024/10/Thien-2.jpeg',
+    },
+    {
+        'id': 6,
+        'title': 'Tăng cường miễn dịch bằng thói quen lành mạnh',
+        'content': '''
+Một hệ miễn dịch khỏe mạnh giúp cơ thể chống lại vi khuẩn, virus và bệnh tật. Để làm được điều này, bạn cần kết hợp nhiều yếu tố: chế độ ăn uống đầy đủ, ngủ ngon, tập thể dục và tránh stress.
+
+Ngoài ra, bổ sung thực phẩm chứa kẽm, vitamin D, probiotics và uống nước ấm đều đặn cũng rất hữu ích.
+
+Đừng quên rửa tay thường xuyên và giữ vệ sinh cá nhân để hạn chế lây nhiễm bệnh từ môi trường.
+''',
+        'image': 'https://suckhoedoisong.qltns.mediacdn.vn/324455921873985536/2021/9/30/1-1632967777959596819251.png',
+    },
+]
 
 def blog_view(request):
-    posts = [
-        {
-            'title': 'Lợi ích của việc uống đủ nước mỗi ngày',
-            'content': 'Uống đủ nước giúp duy trì sự cân bằng chất lỏng trong cơ thể, tăng cường năng lượng và cải thiện làn da...',
-        },
-        {
-            'title': 'Tập thể dục đều đặn để tăng cường sức khỏe',
-            'content': 'Tập thể dục giúp cải thiện hệ tim mạch, giảm stress và nâng cao sức đề kháng của cơ thể...',
-        },
-        {
-            'title': 'Chế độ ăn giàu vitamin và khoáng chất',
-            'content': 'Bổ sung rau xanh, hoa quả và các loại hạt giúp cung cấp vitamin và khoáng chất cần thiết cho cơ thể...',
-        },
-    ]
+    return render(request, 'app/blog.html', {'posts': POSTS})
 
-    return render(request, 'app/blog.html', {'posts': posts})
+def blog_detail_view(request, post_id):
+    post = next((p for p in POSTS if p['id'] == post_id), None)
+    if not post:
+        return render(request, '404.html', status=404)
+    return render(request, 'app/blog_detail.html', {'post': post})
