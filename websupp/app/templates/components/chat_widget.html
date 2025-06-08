@@ -50,7 +50,7 @@
         input.value = "";
 
         try {
-            const response = await fetch("/api/chatbot/", {
+            const response = await fetch("http://localhost:8001/chat", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -59,7 +59,7 @@
             });
             const result = await response.json();
             if (result.answer) {
-                log.innerHTML += `<div class="mb-1"><strong>Bot:</strong> ${result.answer}</div>`;
+                log.innerHTML += `<div class="mb-1 text-gray-800"><strong>Bot:</strong> ${result.answer}</div>`;
             } else {
                 log.innerHTML += `<div class="mb-1 text-red-600"><strong>Lỗi:</strong> ${result.error || "Không thể phản hồi"}</div>`;
             }
