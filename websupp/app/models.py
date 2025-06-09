@@ -64,3 +64,12 @@ class Review(models.Model):
     rating = models.PositiveSmallIntegerField(default=5)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+
+
+class ChatHistory(models.Model):
+    timestamp = models.DateTimeField(auto_now_add=True)
+    user_input = models.TextField()
+    bot_response = models.TextField()
+
+    def __str__(self):
+        return f"{self.timestamp} | {self.user_input[:30]}..."
