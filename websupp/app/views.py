@@ -15,8 +15,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 import random
 from .models import Product, Review
-from django.urls import reverse #dong xung dot
-
+from django.urls import reverse
+from .form import CustomUserCreationForm  
 
 import requests
 import json
@@ -68,6 +68,8 @@ def momo_payment_view(request, order_id):
 @login_required
 def checkout_view(request):
     cart = Cart(request)
+    selected_ids = request.session.get('selected_products', [])
+
     if request.method == "POST":
         form = CheckoutForm(request.POST)
         if form.is_valid():
@@ -75,17 +77,11 @@ def checkout_view(request):
             phone = form.cleaned_data['phone']
             payment_method = form.cleaned_data['payment_method']
 
-            selected_ids = request.POST.getlist('selected_products')
-            print("Selected product IDs:", selected_ids)  # <-- Thêm dòng này để debug
-
-            total_price = 0
-
-            # Kiểm tra có sản phẩm nào được chọn không
             if not selected_ids:
                 messages.warning(request, "Bạn phải chọn ít nhất 1 sản phẩm để thanh toán.")
                 return redirect('cart_detail')
 
-            # Tính tổng tiền cho sản phẩm được chọn
+            total_price = 0
             for item in cart:
                 if str(item['product'].id) in selected_ids:
                     total_price += item['total_price']
@@ -94,7 +90,6 @@ def checkout_view(request):
                 messages.warning(request, "Bạn phải chọn ít nhất 1 sản phẩm có số lượng lớn hơn 0.")
                 return redirect('cart_detail')
 
-            # Tạo order sau khi đã tính tổng tiền
             order = Order.objects.create(
                 user=request.user,
                 address=address,
@@ -103,7 +98,6 @@ def checkout_view(request):
                 total_price=total_price
             )
 
-            # Tạo OrderItem
             for item in cart:
                 if str(item['product'].id) in selected_ids:
                     OrderItem.objects.create(
@@ -114,6 +108,7 @@ def checkout_view(request):
                     )
 
             cart.clear()
+            del request.session['selected_products']
 
             if payment_method == 'momo':
                 return redirect('momo_payment', order_id=order.id)
@@ -121,7 +116,7 @@ def checkout_view(request):
                 messages.info(request, "Vui lòng chuyển khoản theo thông tin trên đơn hàng.")
                 return redirect('order_detail', order_id=order.id)
             else:  # COD
-                messages.success(request, "Đặt hàng thành công! Vui lòng chuẩn bị tiền khi nhận hàng.")
+                messages.success(request, f"Đặt hàng thành công! Mã đơn hàng #{order.id}.")
                 return redirect('order_detail', order_id=order.id)
     else:
         form = CheckoutForm()
@@ -173,18 +168,19 @@ def order_detail_view(request, order_id):
     return render(request, 'app/order_detail.html', {'order': order})
 
 
-def register_view(request):
-    if request.method == "POST":
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            redirect_url = request.GET.get('next') or 'home'
-            return redirect(redirect_url)
 
+
+def register_view(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Đăng ký thành công! Bạn có thể đăng nhập.")
+            return redirect('login')
     else:
-        form = UserCreationForm()
-    return render(request, "app/register.html", {"form": form})
+        form = CustomUserCreationForm()
+
+    return render(request, 'app/register.html', {'form': form})
 
 def login_view(request):
     if request.method == "POST":
@@ -251,10 +247,19 @@ def cart_remove(request, product_id):
     cart.remove(product)
     return redirect('cart_detail')
 
+
 def cart_detail(request):
     cart = Cart(request)
-    return render(request, 'app/cart_detail.html', {'cart': cart})
+    if request.method == "POST":
+        selected_products = request.POST.getlist('selected_products')
+        if not selected_products:
+            messages.warning(request, "Bạn phải chọn ít nhất 1 sản phẩm để thanh toán.")
+            return redirect('cart_detail')
 
+        request.session['selected_products'] = selected_products
+        return redirect('checkout')
+
+    return render(request, 'app/cart_detail.html', {'cart': cart})
 @staff_member_required
 def admin_orders_view(request):
     orders = Order.objects.all().order_by('-created_at')

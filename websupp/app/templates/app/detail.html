@@ -1,6 +1,13 @@
 {% extends 'app/base.html' %}
 {% load custom_filters %}
 {% block content %}
+
+<!-- Background mờ -->
+<div class="fixed inset-0 z-0">
+    <img src="/static/images/hero-bg.jpg" alt="Background" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+</div>
+
 {% if request.GET.added == 'true' %}
 {% include 'components/chat_widget.html' %}
 
@@ -14,15 +21,16 @@
     ✅ Sản phẩm đã được thêm vào giỏ hàng!
 </div>
 {% endif %}
-<div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 py-12 px-4">
+
+<div class="relative z-10 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 py-12 px-4 text-gray-100">
     <!-- Ảnh sản phẩm -->
     <div class="flex flex-col items-center">
         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-72 h-72 object-contain rounded-xl shadow-lg mb-4 bg-white">
     </div>
     <!-- Thông tin và form mua -->
     <div class="flex flex-col justify-center">
-        <h1 class="text-3xl font-extrabold mb-3 text-gray-900 dark:text-white">{{ product.name }}</h1>
-        <div class="text-2xl font-bold text-red-500 mb-4">Giá: {{ product.price|floatformat:0 }}₫</div>
+        <h1 class="text-3xl font-extrabold mb-3 text-white">{{ product.name }}</h1>
+        <div class="text-2xl font-bold text-red-400 mb-4">Giá: {{ product.price|floatformat:0 }}₫</div>
         <form action="{% url 'cart_add' product.id %}" method="post" class="space-y-4">
             {% csrf_token %}
             {% if product.weight_options %}
@@ -63,7 +71,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
                 </svg>
             </button>
-            <div x-show="open" class="text-gray-200 dark:text-gray-300 mt-2 pl-3" x-transition>
+            <div x-show="open" class="text-gray-100 mt-2 pl-3" x-transition>
                 {{ product.description }}
             </div>
         </div>
@@ -71,18 +79,18 @@
 </div>
 
 <!-- Tabs mô tả & đánh giá sản phẩm -->
-<div x-data="{ tab: 1 }" class="max-w-3xl mx-auto mt-12 bg-white dark:bg-gray-900 rounded-xl shadow px-6 py-8">
+<div x-data="{ tab: 1 }" class="relative z-10 max-w-3xl mx-auto mt-12 bg-white/10 backdrop-blur-md rounded-xl shadow px-6 py-8 text-gray-100">
     <div class="border-b flex gap-12 text-lg font-bold uppercase mb-6">
         <button @click="tab = 1"
-            :class="tab === 1 ? 'text-red-500 border-b-2 border-red-500' : 'text-gray-400 border-b-2 border-transparent'"
+            :class="tab === 1 ? 'text-red-400 border-b-2 border-red-400' : 'text-gray-300 border-b-2 border-transparent'"
             class="pb-2 focus:outline-none transition">Mô tả sản phẩm</button>
         <button @click="tab = 2"
-            :class="tab === 2 ? 'text-red-500 border-b-2 border-red-500' : 'text-gray-400 border-b-2 border-transparent'"
+            :class="tab === 2 ? 'text-red-400 border-b-2 border-red-400' : 'text-gray-300 border-b-2 border-transparent'"
             class="pb-2 focus:outline-none transition">Đánh giá ({{ reviews|length }})</button>
     </div>
     <!-- Tab mô tả -->
     <div x-show="tab === 1" x-transition>
-        <div class="text-gray-700 dark:text-gray-200 leading-relaxed">
+        <div class="text-gray-100 leading-relaxed">
             {{ product.description|linebreaks }}
         </div>
     </div>
@@ -90,18 +98,18 @@
     <div x-show="tab === 2" x-transition>
         {% if reviews %}
             {% for review in reviews %}
-                <div class="border-b py-2">
+                <div class="border-b py-2 text-gray-100">
                     <div class="font-bold">{{ review.name }}</div>
                     <div class="text-yellow-400">
                         {% for _ in "12345"|slice:":review.rating"|make_list %}★{% endfor %}
                         {% for _ in "12345"|slice:"review.rating:"|make_list %}<span class="text-gray-400">★</span>{% endfor %}
                     </div>
                     <div>{{ review.content }}</div>
-                    <div class="text-xs text-gray-500">{{ review.created_at|date:"d/m/Y H:i" }}</div>
+                    <div class="text-xs text-gray-300">{{ review.created_at|date:"d/m/Y H:i" }}</div>
                 </div>
             {% endfor %}
         {% else %}
-            <div class="text-gray-400 italic">Chưa có đánh giá nào. Hãy là người đầu tiên nhận xét!</div>
+            <div class="text-gray-300 italic">Chưa có đánh giá nào. Hãy là người đầu tiên nhận xét!</div>
         {% endif %}
         <!-- Form đánh giá mới -->
         <form method="post" class="mt-6 space-y-3">
@@ -127,7 +135,7 @@
                 <span>⭐</span> Gửi đánh giá
             </button>
             {% if message %}
-            <div class="text-red-500 font-bold">{{ message }}</div>
+            <div class="text-red-400 font-bold">{{ message }}</div>
             {% endif %}
         </form>
     </div>
