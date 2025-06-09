@@ -1,5 +1,6 @@
 {% extends 'app/base.html' %}
 {% block content %}
+
 <h2>Chi tiết đơn hàng #{{ order.id }}</h2>
 
 <p><strong>Ngày đặt:</strong> {{ order.created_at }}</p>
@@ -25,5 +26,7 @@
 </div>
 {% endif %}
 
-<a href="{% url 'my_orders' %}">← Quay lại danh sách đơn hàng</a>
+<a href="{% url 'home' %}" class="btn btn-primary mt-4">🏠 Về trang chủ</a>
+<a href="{% url 'my_orders' %}" class="btn btn-secondary mt-4">📋 Xem danh sách đơn hàng</a>
+
 {% endblock %}

@@ -1,40 +1,40 @@
 {% extends 'app/base.html' %}
 {% block content %}
 {% load custom_filters %}
-<form method="get" class="mb-4">
-    <label for="sort">Sắp xếp theo:</label>
-    <select name="sort" id="sort" onchange="this.form.submit()">
-        <option value="" {% if not current_sort %}selected{% endif %}>Mặc định</option>
-        <option value="newest" {% if current_sort == 'newest' %}selected{% endif %}>Mới nhất</option>
-        <option value="price_asc" {% if current_sort == 'price_asc' %}selected{% endif %}>Giá thấp đến cao</option>
-    </select>
-</form>
-<div class="max-w-7xl mx-auto px-4 py-10">
-    <h1 class="text-3xl font-extrabold mb-4 text-center">Tất cả sản phẩm</h1>
-    
-    <!-- Dropdown chọn sắp xếp -->
-    <form method="get" id="sortForm" class="mb-6 text-center">
-        <label for="sortSelect" class="mr-2 font-medium">Sắp xếp:</label>
-        <select name="sort" id="sortSelect" onchange="document.getElementById('sortForm').submit();" 
-                class="border rounded p-2">
-            <option value="" {% if not current_sort %}selected{% endif %}>Mặc định</option>
-            <option value="newest" {% if current_sort == 'newest' %}selected{% endif %}>Mới nhất</option>
-            <option value="price_asc" {% if current_sort == 'price_asc' %}selected{% endif %}>Giá thấp đến cao</option>
-        </select>
-    </form>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        {% for product in products %}
-        <div class="bg-white dark:bg-gray-900 border rounded-xl shadow-lg p-4 flex flex-col items-center hover:scale-105 hover:shadow-2xl transition">
-            <a href="{% url 'product_detail' product.slug %}" class="w-full flex flex-col items-center">
-                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-36 h-36 object-contain mb-3 rounded-lg shadow">
-                <h2 class="text-lg font-semibold text-center mb-2">{{ product.name }}</h2>
-                <p class="text-red-600 font-bold text-xl mb-2">{{ product.price|floatformat:0 }}₫</p>
-            </a>
+<!-- Bọc toàn bộ nội dung bằng div có ảnh nền và hiệu ứng mờ -->
+<div class="relative bg-cover bg-center" style="background-image: url('/static/images/testimonial-bg.png');">
+    <!-- Overlay làm mờ -->
+    <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-md"></div>
+
+    <!-- Nội dung chính đặt trong relative để nằm trên overlay -->
+    <div class="relative max-w-7xl mx-auto px-4 py-10 text-white">
+
+        <form method="get" class="mb-4 text-center">
+            <label for="sort" class="mr-2 font-medium">Sắp xếp theo:</label>
+            <select name="sort" id="sort" onchange="this.form.submit()" class="border rounded p-2 text-black">
+                <option value="" {% if not current_sort %}selected{% endif %}>Mặc định</option>
+                <option value="newest" {% if current_sort == 'newest' %}selected{% endif %}>Mới nhất</option>
+                <option value="price_asc" {% if current_sort == 'price_asc' %}selected{% endif %}>Giá thấp đến cao</option>
+            </select>
+        </form>
+
+        <h1 class="text-3xl font-extrabold mb-6 text-center">Tất cả sản phẩm</h1>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {% for product in products %}
+            <div class="bg-white bg-opacity-80 border rounded-xl shadow-lg p-4 flex flex-col items-center hover:scale-105 hover:shadow-2xl transition text-black">
+                <a href="{% url 'product_detail' product.slug %}" class="w-full flex flex-col items-center">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-36 h-36 object-contain mb-3 rounded-lg shadow">
+                    <h2 class="text-lg font-semibold text-center mb-2">{{ product.name }}</h2>
+                    <p class="text-red-600 font-bold text-xl mb-2">{{ product.price|floatformat:0 }}₫</p>
+                </a>
+            </div>
+            {% empty %}
+            <p class="col-span-full text-center">Không có sản phẩm nào.</p>
+            {% endfor %}
         </div>
-        {% empty %}
-        <p class="col-span-full text-center">Không có sản phẩm nào.</p>
-        {% endfor %}
     </div>
 </div>
+
 {% endblock %}

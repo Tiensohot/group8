@@ -1,6 +1,15 @@
 {% load custom_filters %}
 {% include 'components/chat_widget.html' %}
-
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} mt-3 container">
+          {{ message }}
+        </div>
+    {% endfor %}
+    {% for product_id in selected_products %}
+        <input type="hidden" name="selected_products" value="{{ product_id }}">
+    {% endfor %}
+{% endif %}
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -72,7 +81,7 @@
 <body>
 
 <div class="container">
-    <form method="post" class="form-container mx-auto max-width-md">
+    <form method="post" class="form-container mx-auto max-width-md" action="{% url 'checkout' %}">
         {% csrf_token %}
 
         <h2 class="mb-4"><span>🏋️‍♂️</span> Xác nhận đơn hàng</h2>
