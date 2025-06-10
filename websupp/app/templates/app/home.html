@@ -36,21 +36,27 @@
   </div>
 
 </section>
-<section class="py-16 bg-black text-white">
-  <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-3xl font-extrabold mb-8 text-center">SẢN PHẨM NỔI BẬT</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {% for product in featured_products %}
-      <div class="bg-gray-900 rounded-2xl shadow-lg p-6 flex flex-col items-center">
-        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-40 h-40 object-contain mb-4">
-        <h3 class="text-xl font-bold mb-2 text-center">{{ product.name }}</h3>
-        <p class="text-lg font-semibold mb-2 text-red-500">{{ product.price|floatformat:0 }}₫</p>
-        <a href="{% url 'product_detail' product.slug %}" class="mt-4 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-5 rounded-lg transition">Xem chi tiết</a>
+
+<!-- Sản phẩm nổi bật -->
+<!-- Sản phẩm nổi bật -->
+<section class="py-12 bg-black text-white">
+  <h2 class="text-center text-2xl font-bold mb-8">SẢN PHẨM NỔI BẬT</h2>
+  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
+    {% for product in featured_products %}
+      <div class="bg-white text-black rounded-lg overflow-hidden shadow-md hover:scale-105 duration-300">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold mb-2">{{ product.name }}</h3>
+          <p class="text-sm text-gray-600 mb-4">{{ product.description|truncatechars:80 }}</p>
+          <p class="font-bold text-red-600 mb-2">{{ product.price|floatformat:0 }}₫</p>
+          <a href="{% url 'product_detail' product.id %}" class="text-sm text-blue-500 hover:underline">Xem chi tiết</a>
+        </div>
       </div>
-      {% endfor %}
-    </div>
+    {% endfor %}
   </div>
 </section>
+
+
 
 
 {% endblock %}

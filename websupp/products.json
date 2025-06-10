@@ -1,0 +1,1469 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2025-06-08T16:00:27.818Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Tạ tay đa năng tập gym điều chỉnh 10kg 20kg 30kg 40kg tập cơ tay - vai - ngực- bắp kết hợp đòn đẩy tập tại nhà",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2025-06-08T16:01:03.319Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Tạ tay đa năng tập gym điều chỉnh 10kg 20kg 30kg 40kg tập cơ tay - vai - ngực- bắp kết hợp đòn đẩy tập tại nhà",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2025-06-08T16:01:35.903Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Tạ tay đa năng tập gym",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2025-06-08T16:03:03.958Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "Tạ tập gym hình lục giác 5kg",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2025-06-08T16:04:42.774Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "tạ đẩy kết hợp",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2025-06-08T16:06:05.460Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "5",
+    "object_repr": "Tạ tay bọc nhựa cao cấp loại 1 mẫu mới 2025",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2025-06-08T16:13:49.708Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "6",
+    "object_repr": "Bộ tạ đa năng Tạ tay lắp ghép kèm đòn tạ",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2025-06-08T16:15:47.195Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "7",
+    "object_repr": "Tạ tay tại nhà cho nam và nữ",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2025-06-08T16:17:05.908Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "8",
+    "object_repr": "Bộ tập tạ đa năng",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2025-06-08T16:18:30.844Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "9",
+    "object_repr": "Bộ tạ tay đa năng",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2025-06-08T16:19:53.612Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "10",
+    "object_repr": "OT121 Xe đạp tập gym tại nhà dụng cụ tập gym đạp xe tại nhà yên tĩnh tiện lợi nhỏ gọn",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2025-06-08T16:21:14.320Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "11",
+    "object_repr": "Máy chạy bộ tại nhà máy đi bộ gọn gia dụng băng chạy chống rung EVA không tay cầm nhỏ",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2025-06-08T16:23:03.251Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "12",
+    "object_repr": "Bột Protein Thực Vật NUTA SUPERFOODS Hỗ Trợ Phát Triển Cơ Bắp 800G",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2025-06-08T16:23:53.951Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "13",
+    "object_repr": "Bột Protein Thực Vật Healthybean Hỗ trợ Tăng cơ - Tăng cân",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2025-06-08T16:25:09.359Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "14",
+    "object_repr": "Bột Phát Triển Cân Nặng, Cơ Bắp MUSCLE MASS AFIT Tập Gym - Hàng chính hãng",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2025-06-08T16:26:25.270Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "15",
+    "object_repr": "Minch Creatine Powder Creatine Muscle Builder dành cho nam và nữ Bài tập tăng cường sức mạnh",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2025-06-08T16:27:32.291Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "16",
+    "object_repr": "1kg Bột Đậu Ngũ Cốc Tập Gym Yoga (Có ĐKKD + GCN ATTP)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2025-06-08T16:29:11.395Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "17",
+    "object_repr": "GOLD CREATINE-CÁNG PHỒNG CƠ BẮP- HỖ TRỢ TĂNG CƠ NHANH- PHỤC HỒI- TĂNG HIỆU SUẤT TẬ",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2025-06-08T16:30:14.642Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "18",
+    "object_repr": "VEGAN PROTEIN- Sữa tăng cơ giảm mỡ Afit, giúp xây dựng cơ bắp",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2025-06-08T16:31:05.845Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "19",
+    "object_repr": "Thức Uống Năng Lượng Liquid Gel GU ENERGY - Bổ Sung Năng Lượng Khi Vận Động Thể Thao",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2025-06-08T16:32:01.392Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "20",
+    "object_repr": "Bột Whey Protein Thực Vật Vegan Thuần Chay Hỗ Trợ Phát Triển Cơ Bắp Tập Gym",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2025-06-08T16:33:51.995Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "21",
+    "object_repr": "Băng quấn cổ tay Aolikes,Đai quấn bảo vệ cổ tay hỗ trợ nẹp xương ống khớp cổ tay AOLIKES 7937",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2025-06-08T16:35:08.286Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "22",
+    "object_repr": "【🔥2 cái/Freeship🔥】Găng Tay Tập GYM, Dây kéo lưng Lifting Straps đa năng hỗ trợ tập Gym, Deadlift, lên xà, nâng tạ",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2025-06-08T16:36:10.093Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "23",
+    "object_repr": "Găng tay tập gym chống trượt, bền bỉ cho nâng tạ và đạp xe.",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2025-06-08T16:37:21.286Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "24",
+    "object_repr": "Đai Arm Blaster | Thanh Hỗ Trợ Tập Tay Trước Tập Thể Thao Tập Gym",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2025-06-08T16:39:38.032Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "25",
+    "object_repr": "Phụ kiện hỗ trợ tập gym",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2025-06-09T12:02:10.860Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "14",
+    "object_repr": "Bột Phát Triển Cân Nặng, Cơ Bắp MUSCLE MASS AFIT Tập Gym - Hàng chính hãng",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Weight options\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2025-06-09T12:04:26.375Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "15",
+    "object_repr": "Minch Creatine Powder Creatine Muscle Builder dành cho nam và nữ Bài tập tăng cường sức mạnh",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Weight options\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2025-06-09T12:05:57.311Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "16",
+    "object_repr": "1kg Bột Đậu Ngũ Cốc Tập Gym Yoga (Có ĐKKD + GCN ATTP)",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add category",
+    "content_type": 7,
+    "codename": "add_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change category",
+    "content_type": 7,
+    "codename": "change_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete category",
+    "content_type": 7,
+    "codename": "delete_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view category",
+    "content_type": 7,
+    "codename": "view_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add product",
+    "content_type": 8,
+    "codename": "add_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change product",
+    "content_type": 8,
+    "codename": "change_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete product",
+    "content_type": 8,
+    "codename": "delete_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view product",
+    "content_type": 8,
+    "codename": "view_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add order",
+    "content_type": 9,
+    "codename": "add_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change order",
+    "content_type": 9,
+    "codename": "change_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete order",
+    "content_type": 9,
+    "codename": "delete_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view order",
+    "content_type": 9,
+    "codename": "view_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add order item",
+    "content_type": 10,
+    "codename": "add_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change order item",
+    "content_type": 10,
+    "codename": "change_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete order item",
+    "content_type": 10,
+    "codename": "delete_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view order item",
+    "content_type": 10,
+    "codename": "view_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add review",
+    "content_type": 11,
+    "codename": "add_review"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change review",
+    "content_type": 11,
+    "codename": "change_review"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete review",
+    "content_type": 11,
+    "codename": "delete_review"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view review",
+    "content_type": 11,
+    "codename": "view_review"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$GLQ24TCltHEI$mMH/elXeI9qWKO7iPT1k2bSbRyuxhk5KDa6KxndS0Io=",
+    "last_login": "2025-06-10T03:32:04.025Z",
+    "is_superuser": true,
+    "username": "websupp_cuong",
+    "first_name": "",
+    "last_name": "",
+    "email": "datbn01@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-06-08T14:22:38.085Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$gCsWrcGWZ8ni$P6Pzx1fc/PpE9KWxFDV0BUtgb4XYbuvxKztCkCfuIDQ=",
+    "last_login": "2025-06-10T03:20:00.234Z",
+    "is_superuser": false,
+    "username": "deobiet222111",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-06-08T14:28:19.475Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$42HPP60hwm70$hRFOQ24Jd/qGT09TOQUmiqoVp8weU1HV1IGEKgHdVkw=",
+    "last_login": "2025-06-10T09:02:19.573Z",
+    "is_superuser": true,
+    "username": "cuongdz",
+    "first_name": "",
+    "last_name": "",
+    "email": "cuongnh190204@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-06-10T08:50:34.032Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "app",
+    "model": "category"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "app",
+    "model": "product"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "app",
+    "model": "order"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "app",
+    "model": "orderitem"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "app",
+    "model": "review"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "29myukvbfpu66aapfwhcuukk9ipt3mzt",
+  "fields": {
+    "session_data": ".eJxVjEsOwiAABe_C2hCgfF269wwEHiBVA0lpV8a7a5MudPtm5r2ID9ta_Tby4udEzoST0-8WAx657SDdQ7t1it7WZY50V-hBB732lJ-Xw_07qGHUb620DEYJwBlEWF2KM9FyEQVj3EguTMIkYXRhk3BKqIkhcJuR4GAB8v4AzvI3oQ:1uOafa:AQnv7uC9hmwWZagHlKj3O8DuA09x9D9uJpTwBvHcp60",
+    "expire_date": "2025-06-23T11:28:02.015Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "3k9ebs23lqwdwmunwzwjpm8sxmuzd770",
+  "fields": {
+    "session_data": ".eJxVjEsOwiAABe_C2hCgfF269wwEHiBVA0lpV8a7a5MudPtm5r2ID9ta_Tby4udEzoST0-8WAx657SDdQ7t1it7WZY50V-hBB732lJ-Xw_07qGHUb620DEYJwBlEWF2KM9FyEQVj3EguTMIkYXRhk3BKqIkhcJuR4GAB8v4AzvI3oQ:1uOao4:LnaFnCdvywvZAFOw3P2_hhL3RyRJPmHx3xEU5Z99PRU",
+    "expire_date": "2025-06-23T11:36:48.974Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "3wzz3qvn1rgr0cp20papei9o3e9udmg1",
+  "fields": {
+    "session_data": ".eJxVTksOgyAUvAtrQ-ChKC677xnMg4eVtsEWcdEY715MXLSbyWR-mY0NuOZpWBefhkCsZ8CqX82ie_h4GHTHeJu5m2NOwfIjwk934deZ_PNyZv8GJlym0kYA1zXUNCCEIglGGg_oAGotTa2RWu2lHU3hQArd2AkFsiNVY2u1FGXUYcqs38rDAu8VYw75w3qo2CsF54_vWnEh2L7vX46HRBs:1uORee:L5hHoQ2M6lE11-TBEnvgUCc-fM84F6vAesSXH-dNX0M",
+    "expire_date": "2025-06-23T01:50:28.964Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "6w0crcbhrejdvnqzwuml12gwtqhspxzs",
+  "fields": {
+    "session_data": ".eJxVjT0OgzAUg-_yZhTllySM3XsGlLyEkrYKbQhDhbh7QWJoFw_2Z3uF3i117Jc5lj4F6IBB8-t5h4-YjyDcXb5NBKdcS_LkQMiZzuQ6hfi8nOzfwOjmcW-rVjqtOKLV6NG0w2C1N4x7TinTknEdUEjU7UAFt4orQdExEzGgRYO4j6IrFboVmDz0vbhcU_1Axxp4lYRxfxGWEkph27YvCLxFIQ:1uOJ9m:c6AZAKPLrAgBGtKZB4vT11Mk3la8Osnl0RWPRpzmIdk",
+    "expire_date": "2025-06-22T16:46:02.817Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "8olk3ropozizbs2xt6e1zd9u0lnq38kc",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlnK1ywlPWew3nrXOIBsKU6qiLtDpBTQvpl5m_FYl-TXqrOfxFxMZ06_GyM8Ne9AHsj3YkPJyzyx3RV70GpvRfR1Pdy_g4SavnXLjmLfD0rQhiJ1YIkQAnRg143UclRRnIWcqtDoKEBDCAM3DPTm_QEkHjos:1uOus7:eVeIyNmAKG3UjalLEV_NirTOEzk1uQW5BPvyfZcmquM",
+    "expire_date": "2025-06-24T09:02:19.577Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "8ybu406x8mspvzevsw9wq6te29v0h6rg",
+  "fields": {
+    "session_data": ".eJxVjDsOwyAQRO9CHSFYPoaU6X0GtLA4OIlAMnYV5e6xJRdJN5r3Zt4s4LaWsPW8hJnYlQG7_HYR0zPXA9AD673x1Oq6zJEfCj9p52Oj_Lqd7t9BwV72NQIkZ8gYEEKRBC99BkwA2kqvLdJgs4yT3zOQwjQ5oUA6UhqHaKVgny-7TTbO:1uOIFd:uvfHdAfZfsTTtbS-P9tos_WJwkpeS7VGYE40DgrzGng",
+    "expire_date": "2025-06-22T15:48:01.812Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "9rik1ey7tv4bu2x2cqxm6npqfslm0ebx",
+  "fields": {
+    "session_data": ".eJxVTksOgyAUvAtrQ-ChKC677xnMg4eVtsEWcdEY715MXLSbyWR-mY0NuOZpWBefhkCsZ8CqX82ie_h4GHTHeJu5m2NOwfIjwk934deZ_PNyZv8GJlym0kYA1zXUNCCEIglGGg_oAGotTa2RWu2lHU3hQArd2AkFsiNVY2u1FGXUYcqs38rDAu8VYw75w3pZsVcKzh_fteJCsH3fv45yRBo:1uORXa:7kQ73PzYLKmrpRtXoOjweQvajuLPXdfu-MNEvetYATg",
+    "expire_date": "2025-06-23T01:43:10.652Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "9s8dylsytfb11go2w33515zd0wsliun7",
+  "fields": {
+    "session_data": ".eJxVTUsOgyAUvMtbGwIPRXHZfc9gHh8rbYMt4qIx3r2YuGg3k8l8NxhozdOwLj4NwUEPCNWvZsg-fDwMd6d4m5mdY07BsCPCTndh19n55-XM_g1MtEylTYi2a1zTIOfSCdRCeySLWCuha0WuVV6YUReOTpIdOy5RdE7W1BoleBm1lDL0G8gD3ivFHPIHelHBKwXry4nSjHPY9_0LS3lD7w:1uOQxS:rMsCsRyHYvp3Xy2q01LzAVJfnU-2cbkPpFAWczMnc64",
+    "expire_date": "2025-06-23T01:05:50.368Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ac4a77o0w2nxksjkeckx8cdfk62fd1ay",
+  "fields": {
+    "session_data": ".eJxVjEEOgyAURO_CuiHwQQSX3fcM5MPHYttggrgy3r2auGh3k5k3b2Me15b9uqTqJ2IDA3b77QLGdyrnQC8sz5nHubQ6BX4i_FoX_pgpfe4X-yfIuOTjjQDRdtR1IIQiCU66BBgBtJFOG6TeJBlGd2QghXG0QoG0pDT2wUhxSCPWxoZt37_uIzoa:1uOIJA:7c7-zhgWaF1BeZazjMWD0RRLCswYjyiEMrGCbli__kA",
+    "expire_date": "2025-06-22T15:51:40.419Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "dhh82whtcbdk9u14hnv9qlz5hosoung0",
+  "fields": {
+    "session_data": ".eJxVTksOgyAUvAtrQ-ChKC677xnMg4eVtsEWcdEY715MXLSbyWR-mY0NuOZpWBefhkCsZ8CqX82ie_h4GHTHeJu5m2NOwfIjwk934deZ_PNyZv8GJlym0kYA1zXUNCCEIglGGg_oAGotTa2RWu2lHU3hQArd2AkFsiNVY2u1FGXUYcqs38rDAu8VYw75w3pZsVcKzh_fteJCsH3fv45yRBo:1uOSqk:5SaNS20KrKfnXKpEibMTlFOvIPj1pTUvKImUgI3ZEGA",
+    "expire_date": "2025-06-23T03:07:02.537Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "e6sg0llez86r52fwklafz5r5ex2cfpel",
+  "fields": {
+    "session_data": ".eJxVTksOgyAUvAtrQ-ChKC677xnMg4eVtsEWcdEY715MXLSbyWR-mY0NuOZpWBefhkCsZ8CqX82ie_h4GHTHeJu5m2NOwfIjwk934deZ_PNyZv8GJlym0kYA1zXUNCCEIglGGg_oAGotTa2RWu2lHU3hQArd2AkFsiNVY2u1FGXUYcqs38rDAu8VYw75w3pZsVcKzh_fteJCsH3fv45yRBo:1uORNk:J4JflBjO7KnYfDM6SejKu46Z4H_oInaNGH3Q80I8LQ8",
+    "expire_date": "2025-06-23T01:33:00.925Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "eak5gm2ept8ucty54r3vh7anghadluzd",
+  "fields": {
+    "session_data": ".eJxVjDsOwyAQRO9CHSFYPoaU6X0GtLA4OIlAMnYV5e6xJRdJN5r3Zt4s4LaWsPW8hJnYlQG7_HYR0zPXA9AD673x1Oq6zJEfCj9p52Oj_Lqd7t9BwV72NQIkZ8gYEEKRBC99BkwA2kqvLdJgs4yT3zOQwjQ5oUA6UhqHaKVgny-7TTbO:1uOI5X:G69D-JNsHN-MtLGp0ylaQHIz-1QClRgoLlSI_0E2F-I",
+    "expire_date": "2025-06-22T15:37:35.297Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "gpj96fj2t261a4k14rl5nx1381nrzuum",
+  "fields": {
+    "session_data": ".eJxVjDsOwyAQRO9CHSFYPoaU6X0GtLA4OIlAMnYV5e6xJRdJN5r3Zt4s4LaWsPW8hJnYlQG7_HYR0zPXA9AD673x1Oq6zJEfCj9p52Oj_Lqd7t9BwV72NQIkZ8gYEEKRBC99BkwA2kqvLdJgs4yT3zOQwjQ5oUA6UhqHaKVgny-7TTbO:1uOIDe:Zwk7R4RkywIDMwY1S48vTmanR5X4-wY0ZPUHZ5FBAYg",
+    "expire_date": "2025-06-22T15:45:58.379Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "mzts7nessoh1wz3dz1hefjud5nqnbe7u",
+  "fields": {
+    "session_data": ".eJxVTUsOgyAUvMtbGwJPQXHZfc9gHh8rbYMt4qIx3r2YuGg3k8l8NxhozdOwLj4NwUEPCNWvZsg-fDwMd6d4m5mdY07BsCPCTndh19n55-XM_g1MtEylTYi2k05K5Lx2ArXQHskiNkroRpFrlRdm1IWjq8mOHa9RdK5uqDVK8DJqKWXoN5AHvFeKOeQP9KKCVwrWlxOBknEO-75_AY7ARBo:1uOQBl:gEcJO0bsvn5I1t1ZRXcgnWphv5zRC_Joffj9iOefzb0",
+    "expire_date": "2025-06-23T00:16:33.240Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "nt8j9ylynqo8n9qhkr2rkns4b7dbie5y",
+  "fields": {
+    "session_data": ".eJxVTUsOgyAUvMtbGwIPRXHZfc9gHh8rbYMt4qIx3r2YuGg3k8l8NxhozdOwLj4NwUEPCNWvZsg-fDwMd6d4m5mdY07BsCPCTndh19n55-XM_g1MtEylTYi2a1zTIOfSCdRCeySLWCuha0WuVV6YUReOTpIdOy5RdE7W1BoleBm1lDL0G8gD3ivFHPIHeqzglYL15URpxjns-_4FS41D8A:1uOQk1:WW7c-zcIqPofx0yZAwdqlWVt28BCDmPQCq-dZAPqxZs",
+    "expire_date": "2025-06-23T00:51:57.276Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "oymle4fikjk3gixzb5hf2r6ps5jh0t0q",
+  "fields": {
+    "session_data": ".eJxVTUsOgyAUvMtbGwJPQXHZfc9gHh8rbYMt4qIx3r2YuGg3k8l8NxhozdOwLj4NwUEPCNWvZsg-fDwMd6d4m5mdY07BsCPCTndh19n55-XM_g1MtEylTYi2k05K5Lx2ArXQHskiNkroRpFrlRdm1IWjq8mOHa9RdK5uqDVK8DJqKWXoN5AHvFeKOeQP9KKCVwrWlxOBknEO-75_AY7ARBo:1uOR48:7SSmoWc1gB43RWZsK3pH-cJ5Pr62oo3gVmd3NU7wf8Q",
+    "expire_date": "2025-06-23T01:12:44.440Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "rmp2yxp4pu25h8x0d10dsa5msbxmysbk",
+  "fields": {
+    "session_data": ".eJxVjEsOwiAABe_C2hCgfF269wwEHiBVA0lpV8a7a5MudPtm5r2ID9ta_Tby4udEzoST0-8WAx657SDdQ7t1it7WZY50V-hBB732lJ-Xw_07qGHUb620DEYJwBlEWF2KM9FyEQVj3EguTMIkYXRhk3BKqIkhcJuR4GAB8v4AzvI3oQ:1uOpiW:0JcqPM95QW5Nlb8VBFPKIUHrkrSMfPp9VausVIFQ7io",
+    "expire_date": "2025-06-24T03:32:04.029Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "tunpkknw0cbfz3cnknvuqpr1hb98sks3",
+  "fields": {
+    "session_data": ".eJxVjEsOwiAABe_C2hCgfF269wwEHiBVA0lpV8a7a5MudPtm5r2ID9ta_Tby4udEzoST0-8WAx657SDdQ7t1it7WZY50V-hBB732lJ-Xw_07qGHUb620DEYJwBlEWF2KM9FyEQVj3EguTMIkYXRhk3BKqIkhcJuR4GAB8v4AzvI3oQ:1uOGwv:wXXO8pRIMhZMGfxJ-KM0UZcUSfwfYalY6J8JrkSM7es",
+    "expire_date": "2025-06-22T14:24:37.157Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "twzce4ecm5j1gf60o6goe5ih7euhkcf4",
+  "fields": {
+    "session_data": ".eJxVjrsOgzAMRf_FM4oSBwJh7N5vQM6DkrYKbQhDhfj3BomF5cq659jyBpZShn4DecR3pZhD_kEvKvikYD30oDTjHPa9goHWPA3r4tMQXCEIl86Qffl4APek-JiZnWNOwbBDYSdd2H12_n073cuBiZapbBOi7RrXNMi5dAK10B7JItZK6FqRa5UXZtRlRifJjh2XKDona2qNEuXXP7soQ-8:1uOJSf:y2PemKyhyCBkRWiiZTjHRhmTVrX_9fxXnISyv4INfq8",
+    "expire_date": "2025-06-22T17:05:33.321Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "v6zz4soqh8ymmlnutjuxggvinpq0ez32",
+  "fields": {
+    "session_data": ".eJxVTUsOgyAUvMtbGwJPQXHZfc9gHh8rbYMt4qIx3r2YuGg3k8l8NxhozdOwLj4NwUEPCNWvZsg-fDwMd6d4m5mdY07BsCPCTndh19n55-XM_g1MtEylTYi2k05K5Lx2ArXQHskiNkroRpFrlRdm1IWjq8mOHa9RdK5uqDVK8DJqKWXoN5AHvFeKOeQP9KKCVwrWlxOBknEO-75_AY7ARBo:1uOR0j:xklcIK-1zpdkuZa24ZyuVZ9fVRYQ3SYVrOAlWBy-ABw",
+    "expire_date": "2025-06-23T01:09:13.175Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "vteo244ggnkg6g31cvyb17kaesgbffrc",
+  "fields": {
+    "session_data": ".eJxVTUsOgyAUvMtbGwIPRXHZfc9gHh8rbYMt4qIx3r2YuGg3k8l8NxhozdOwLj4NwUEPCNWvZsg-fDwMd6d4m5mdY07BsCPCTndh19n55-XM_g1MtEylTYi2a1zTIOfSCdRCeySLWCuha0WuVV6YUReOTpIdOy5RdE7W1BoleBm1lDL0G-gD3ivFHPIHelHBKwXry4mQmnEO-75_AY95RCM:1uOQuN:9Ur1pKV9vfo50n_j2cd_aLkYwJt5cvM0K90BHhkGKQM",
+    "expire_date": "2025-06-23T01:02:39.398Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "wqfdzefu8t9gl1u7pfwlbl1m4t5clk2p",
+  "fields": {
+    "session_data": ".eJxVTUsOgyAUvMtbGwIPRXHZfc9gHh8rbYMt4qIx3r2YuGg3k8l8NxhozdOwLj4NwUEPCNWvZsg-fDwMd6d4m5mdY07BsCPCTndh19n55-XM_g1MtEylTYi2a1zTIOfSCdRCeySLWCuha0WuVV6YUReOTpIdOy5RdE7W1BoleBm1lDL0G8gD3ivFHPIHelHBKwXry4nSjHPY9_0LS3lD7w:1uOPyD:Dj_DWkqaNjVpMq3_3Mj7yxH6nYPlbIhZ8H2L1wZPjog",
+    "expire_date": "2025-06-23T00:02:33.084Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "yfv4d3hp5251amaab9ttx6vnk2n0p3jn",
+  "fields": {
+    "session_data": ".eJxVjDsOwyAQRO9CHSFYPoaU6X0GtLA4OIlAMnYV5e6xJRdJN5r3Zt4s4LaWsPW8hJnYlQG7_HYR0zPXA9AD673x1Oq6zJEfCj9p52Oj_Lqd7t9BwV72NQIkZ8gYEEKRBC99BkwA2kqvLdJgs4yT3zOQwjQ5oUA6UhqHaKVgny-7TTbO:1uOIGm:KjmxIj1vmcRPmfPAb3vrY39yFmMahmd5Babq1NNMA80",
+    "expire_date": "2025-06-22T15:49:12.880Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "zcngs25hfqtbnq1v6yajfdeu2li7lw98",
+  "fields": {
+    "session_data": ".eJxVTUsOgyAUvMtbGwIPRXHZfc9gHh8rbYMt4qIx3r2YuGg3k8l8NxhozdOwLj4NwUEPCNWvZsg-fDwMd6d4m5mdY07BsCPCTndh19n55-XM_g1MtEylTYi2a1zTIOfSCdRCeySLWCuha0WuVV6YUReOTpIdOy5RdE7W1BoleBm1lDL0G8gD3ivFHPIHelHBKwXry4nSjHPY9_0LS3lD7w:1uOJXG:_8RFXjySoYFZLeGOWvx7oU4JK9w23zs5KH0Gk4ac5u4",
+    "expire_date": "2025-06-22T17:10:18.989Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 2,
+  "fields": {
+    "name": "Tạ tay đa năng tập gym",
+    "slug": "1",
+    "price": "263.00",
+    "description": "🍀THÔNG TIN SẢN PHẨM TẠ TAY ĐIỀU CHỈNH\r\n\r\n- Bộ sản phẩm Tạ tay 10kg\r\n\r\n+ Quả tạ: Tổng tạ 9kg(1kgx4, 1,25kgx4 ).\r\n\r\n+ Tay đòn: 2\r\n\r\n+ Thanh nối (thanh đòn): 1\r\n\r\n+ Chốt khóa: 4 (đường kính 25mm)\r\n\r\n\r\n\r\n- Bộ sản phẩm Tạ tay 20kg\r\n\r\n + Quả tạ: Tổng tạ 19kg (2kgx4, 1,5kgx4, 1,25kgx4).\r\n\r\n+ Tay đòn: 2\r\n\r\n+ Thanh nối (thanh đòn): 1\r\n\r\n+ Chốt khóa: 4 (đường kính 25mm)  \r\n\r\n\r\n\r\n- Bộ sản phẩm Tạ tay 30kg\r\n\r\n+ Quả tạ: Tổng tạ 29kg (2,5kgx4, 2kgx4, 1,5kgx 4, 1,25kgx4).\r\n\r\n+ Tay đòn: 2\r\n\r\n+ Thanh nối (thanh đòn): 1\r\n\r\n+ Chốt khóa: 4 (đường kính 25mm)\r\n\r\n\r\n\r\n- Bộ sản phẩm Tạ tay 40kg\r\n\r\n+ Quả tạ: Tổng tạ 39kg(3kgX8, 2.5kgX4, 1.25kgX4).\r\n\r\n+ Tay đòn: 2\r\n\r\n+ Thanh nối (thanh đòn): 1 (chiều dài ~40cm)\r\n\r\n+ Chốt khóa: 4 (đường kính 25mm)",
+    "image": "products/1_nq7TxNC.jpg",
+    "flavor_options": "",
+    "weight_options": "5kg",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:01:04Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 3,
+  "fields": {
+    "name": "Tạ tập gym hình lục giác 5kg",
+    "slug": "2",
+    "price": "69.00",
+    "description": "Tạ Tay Tập Gym Nhựa Đúc Xi Măng Đa Giác Chống Trượt – Đủ Size 1kg đến 15kg\r\nTạ tay tập thể hình dạng đa giác giúp chống lăn, chống trơn trượt, an toàn trong quá trình luyện tập. Vỏ ngoài bằng nhựa cao cấp siêu bền, bên trong là xi măng/bê tông chắc chắn, đảm bảo tuổi thọ lâu dài.\r\n\r\n. Tạ tay nhồi sẵn đủ cân sẵn chỉ việc tập\r\n- Đã được đúc đầy đủ vật liệu bên trong xi măng sỏi cát, vì là đúc thủ công nên có hơi trầy xước  nhẹ, móng quý khách thông cảm hoan hỷ\r\ntạ này nặng shop đã cố găng để có giá tốt nên bác nào chắc chắn thì đặt hàng ạ, đừng đặt xong lại bom hoàn đi hoàn về ship cao hơn tiền tạ, Hoan Hỷ ạ\r\n- Chỉ việc mua về là dùng ngay không cần lắp ráp.\r\n- Độ chính xác trọng lượng đúc thủ công nên có thể +_ 500g, phù hợp tập tại nhà hoặc phòng gym.\r\n✅ Thông tin sản phẩm:\r\n- Màu sắc: Đen sang trọng\r\n- Trọng lượng: từ 1kg đến 15kg (chọn từng loại theo link riêng trong shop)\r\n- Chất liệu: Nhựa cao cấp + bê tông/xi măng bên trong\r\n- Thiết kế: Đa giác chống lăn, dễ cầm nắm, an toàn\r\n- Phù hợp: Tập cơ tay, cơ vai, cơ ngực, rèn luyện sức khỏe tại nhà hoặc phòng gym\r\n- Sản phẩm bán theo chiếc",
+    "image": "products/2.jpg",
+    "flavor_options": "",
+    "weight_options": "5kg",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:02:14Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 4,
+  "fields": {
+    "name": "tạ đẩy kết hợp",
+    "slug": "3",
+    "price": "177.00",
+    "description": "🚨 Vui lòng kiểm tra địa chỉ trước khi đặt hàng vì cửa hàng tự động thu thập thông tin vận chuyển. Không thể tự thay đổi nó quả tạ có thể điều chỉnh trọng lượng\r\n\r\n🚨 Khách hàng muốn thay đổi địa chỉ. Vui lòng nhấn hủy và đặt hàng lại.\r\n\r\n🚨Sản phẩm của chúng tôi là hàng chính hãng 100%.\r\n\r\n🚨Nếu bạn hài lòng với sản phẩm và dịch vụ của chúng tôi, vui lòng để lại đánh giá năm sao cho cửa hàng.\r\n- Bộ sản phẩm Tạ tay 10kg",
+    "image": "products/3.jpg",
+    "flavor_options": "",
+    "weight_options": "10kg",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:03:10Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 5,
+  "fields": {
+    "name": "Tạ tay bọc nhựa cao cấp loại 1 mẫu mới 2025",
+    "slug": "4",
+    "price": "125.00",
+    "description": "HƯỚNG DẪN SỬ DỤNG:\r\n\r\n- Tạ đã nhồi nên các bạn có thể mua về sử dụng luôn theo các bài tập\r\n\r\n- Mỗi quả tạ sử dụng cho 1 bên tay, nếu tiết kiẹm có thể dùng 1 quả cho cả 2 tay nhưng sẽ tốn nhiều thời gian tập hơn. Khuyến khích sử dụng 1 quả tạ cho mỗi bên tay( dùng 2 quả cho 2 tay) để cơ được lên đều\r\n\r\n\r\n\r\nLƯU Ý:\r\n\r\nNếu sản phẩm có vấn đề, vui lòng nhắn tin trước giúp shop. Shop không giải quyết những vấn đề liên quan đến đặt sai khối lượng vì thông tin cụ thể shop đã ghi rõ ở phía trên",
+    "image": "products/4.jpg",
+    "flavor_options": "",
+    "weight_options": "3kg",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:04:50Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 6,
+  "fields": {
+    "name": "Bộ tạ đa năng Tạ tay lắp ghép kèm đòn tạ",
+    "slug": "5",
+    "price": "124.00",
+    "description": "Bộ tạ đa năng tạ tay điều chỉnh Tạ tay lắp ghép kèm đòn tạ 10kg - 20kg -30kg -40kg tập gym tại nhà\r\n\r\n🔴 Shop cam kết bảo hành sản phầm tới tay Khách hàng. \r\n\r\n🔴 Các bạn mua hàng gặp vấn đề gì cứ nhắn tin shop sẽ hỗ trợ ngày \r\n\r\n\r\n\r\n🍀Theo các chuyên gia, tập tạ không chỉ giúp ích cho cơ bắp và thể hình. Tập tạ đúng cách còn giúp điều chỉnh tư thế, điều hòa giấc ngủ, tăng mật độ xương, duy trì cân nặng, tăng cường quá trình trao đổi chất, giảm viêm, ngăn ngừa một số bệnh lý mãn tính.",
+    "image": "products/5.jpg",
+    "flavor_options": "",
+    "weight_options": "20kg",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:06:33Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 7,
+  "fields": {
+    "name": "Tạ tay tại nhà cho nam và nữ",
+    "slug": "6",
+    "price": "55.00",
+    "description": "THÔNG TIN SẢN PHẨM\r\n\r\n- Chất liệu: Gang bọc cao su cao cấp\r\n\r\n- Màu sắc: nhiều màu\r\n\r\n- Trọng lượng: 0.5->5kg\r\n\r\n- Chất liệu: lõi bằng gang, ngoài bọc lớp cao su cao cấp \r\n\r\n- Tạ tay được thiết kế 2 đầu theo hình đa giác, giúp tạ nằm yên tại vị trí đặt và tránh trạng thái lăn, trượt\r\n\r\n- Gợi ý chọn mức cân nặng tham khảo:\r\n\r\n     + Tạ 0.5kg - 2kg :tạ tập thể lực siết cân thon gọn tay\r\n\r\n    + Tạ 3kg - 4kg : tạ tập thể lực nâng cao\r\n\r\n    + Tạ 5kg-> hơn nữa : tạ tập gym tăng cơ\r\n\r\n🔥🔥🔥LƯU Ý: GIÁ TRÊN LÀ GIÁ 1 CỤC TẠ",
+    "image": "products/6.jpg",
+    "flavor_options": "",
+    "weight_options": "2.5kg",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:13:52Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 8,
+  "fields": {
+    "name": "Bộ tập tạ đa năng",
+    "slug": "7",
+    "price": "255.00",
+    "description": "Bộ tạ đa năng tạ tay điều chỉnh Tạ tay lắp ghép kèm đòn tạ 10kg - 20kg -30kg -40kg tập gym tại nhà\r\n\r\n🔴 Shop cam kết bảo hành sản phầm tới tay Khách hàng. \r\n\r\n🔴 Các bạn mua hàng gặp vấn đề gì cứ nhắn tin shop sẽ hỗ trợ ngày \r\n\r\n\r\n\r\n🍀Theo các chuyên gia, tập tạ không chỉ giúp ích cho cơ bắp và thể hình. Tập tạ đúng cách còn giúp điều chỉnh tư thế, điều hòa giấc ngủ, tăng mật độ xương, duy trì cân nặng, tăng cường quá trình trao đổi chất, giảm viêm, ngăn ngừa một số bệnh lý mãn tính.",
+    "image": "products/7.jpg",
+    "flavor_options": "",
+    "weight_options": "20kg",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:15:49Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 9,
+  "fields": {
+    "name": "Bộ tạ tay đa năng",
+    "slug": "8",
+    "price": "139.00",
+    "description": "TẠ TAY VÀ TẠ ĐÒN (TẠ ĐẨY) KẾT HỢP TRONG 1 SẢN PHẨM \r\n\r\n\r\n\r\nTrục tạ gắn đệm xốp dài hơn 50cm, chống trầy xước vai, độ bám tốt không lo đổ mồ hôi trơn trượt \r\n\r\nBiến từ tạ tay trở thành tạ đòn chỉ trong nháy mắt \r\n\r\nBu lông giữ tạ với rãnh sâu hơn, chống tuột \r\n\r\n1 đôi 20kg = 10 kg*2 tạ",
+    "image": "products/8.jpg",
+    "flavor_options": "",
+    "weight_options": "20kg",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:17:34Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 10,
+  "fields": {
+    "name": "OT121 Xe đạp tập gym tại nhà dụng cụ tập gym đạp xe tại nhà yên tĩnh tiện lợi nhỏ gọn",
+    "slug": "9",
+    "price": "999.00",
+    "description": "XE ĐẠP TẬP GYM TẠI NHÀ TIỆN LỢI KHÔNG TỐN DIỆN TÍCH, VẬN HÀNH YÊN TĨNH \r\n\r\n\r\n\r\nYên xe điều chỉnh lên xuống, trước sau, phù hợp với thân hình và chiều cao của nhiều người \r\n\r\nTay nắm bọc đệm êm ái, có thể điều chỉnh cao thấp \r\n\r\nDây cao su truyền động dày, có tuổi thọ cao gấp 20 lần so với dây cao su thường, có thể dùng đến 10 năm \r\n\r\nKhung thép liền khối được nung già nên có độ cứng cao, tuổi thọ bền lâu \r\n\r\nChịu tải đến 150 kg\r\n\r\n---Sản phẩm của cửa hàng chúng tôi :Trọng lượng bánh đà 4KG,Tạo lực cản thật  Hiệu quả tập luyện cao;Chất liệu hợp kim đồng Chịu tải 150KG  .\r\n\r\n---So với sản phẩm giá rẻ khác trên thị trường : Trọng lượng bánh đà 1KG,Tương đương xe đạp thông thường,Hiệu quả tập thấp,Hợp kim+nhựa  Chịu tải chỉ 120KG\r\n\r\n \r\n\r\nLoại thường:bánh đà 2KG,Cấu hình tối thiểu,(Hiệu quả tập thể dục tương đối thấp)\r\n\r\nTiêu chuẩn：bánh đà 4KG，có giá đỡ - không có đồng hồ \r\n\r\nLoại cao cấp nhất:bánh đà 4KG,Tạo lực cản thật  Hiệu quả tập luyện cao  (Cửa hàng đề xuất!!!)",
+    "image": "products/9.jpg",
+    "flavor_options": "loại thường",
+    "weight_options": "",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:18:35Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 11,
+  "fields": {
+    "name": "Máy chạy bộ tại nhà máy đi bộ gọn gia dụng băng chạy chống rung EVA không tay cầm nhỏ",
+    "slug": "10",
+    "price": "1119.00",
+    "description": "Máy đi bộ trong nhà máy đi bộ gia dụng băng chạy chống rung EVA không có tay cầm nhỏ gọn chỉ chiếm chưa đến 0.1m vuông diện tích màn hình LED và điều khiển không dây từ xa dễ sử dụng\r\nBăng chạy EVA chống rung tản lực tốt, hấp thụ bớt phản lực tác động lên khớp gối, giúp khớp gối mạnh khỏe hơn \r\nMáy đi bộ trong nhà, có thể chỉnh tốc độ khoảng 1-6KM/h, phù hợp cho mọi đối tượng: Người già đi bộ chậm sau bữa cơm, trẻ em đi bộ tăng vận động, ba mẹ đi bộ thư giãn sau giờ làm....\r\nKích thước đóng gói\r\nMô hình-Bản nâng cấp:120*50*13\r\nPRO-Bản nâng cấp:120*56*17\r\nMô hình:131*58*14.5\r\nMô hình PRO:137.5*58.5*15.5",
+    "image": "products/10.jpg",
+    "flavor_options": "loại cao cấp",
+    "weight_options": "",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:19:56Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 12,
+  "fields": {
+    "name": "Bột Protein Thực Vật NUTA SUPERFOODS Hỗ Trợ Phát Triển Cơ Bắp 800G",
+    "slug": "11",
+    "price": "219.00",
+    "description": "THÔNG TIN SẢN PHẨM ULTIMATE PROTEIN ISOLATE\r\n\r\nKhối lượng: 800G\r\n\r\nƯu điểm nổi bật của Ultimate Protein\r\n\r\nULTIMATE PROTEIN ISOLATE 800G\r\n\r\n\r\n\r\nMô tả sản phẩm:\r\n\r\nUltimate Protein Isolate là sản phẩm bổ sung dinh dưỡng từ protein thực vật chất lượng cao, chiết xuất từ các nguồn thực vật cao cấp, hỗ trợ quá trình xây dựng và phục hồi cơ bắp hiệu quả. Sản phẩm phù hợp cho người lớn, trẻ em, người ăn chay và những người theo chế độ ăn kiêng đặc biệt.\r\n\r\n\r\n\r\n\r\n\r\nƯu điểm nổi bật:\r\n\r\nProtein thực vật chất lượng cao: Được chiết xuất từ các nguồn thực vật cao cấp, cung cấp lượng protein cần thiết cho cơ thể.\r\n\r\nXây dựng cơ bắp: Hỗ trợ quá trình xây dựng cơ bắp với 26 gam protein mỗi muỗng và 5.500mg BCAA.\r\n\r\nGiữ dáng: Chứa nhiều chất xơ, ít chất béo, không chứa chất béo không bão hòa và cholesterol.",
+    "image": "products/11_pdB94yh.jpg",
+    "flavor_options": "vị banana",
+    "weight_options": "",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:21:16Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 13,
+  "fields": {
+    "name": "Bột Protein Thực Vật Healthybean Hỗ trợ Tăng cơ - Tăng cân",
+    "slug": "12",
+    "price": "159.00",
+    "description": "Bột Protein thực vật healthy 1Kg (33 lần dùng) Hỗ Trợ Tăng Cơ - Tăng cân -Giảm Mỡ có BCAA  phục hồi cơ bắp\r\n \r\nGIỚI THIỆU SẢN PHẨM BỘT  PROTEIN THỰC VẬT\r\n- Trọng lượng: 1KG\r\n- Số lần dùng: 33 lần\r\n- Hương vị: ngũ cốc gần giống Vanilla\r\n- Công dụng: Tăng cơ,tăng cân, giảm mỡ cho người tập luyện, người cần bổ sung dinh dưỡng .\r\n- Hạn sử dụng: 12 tháng kể từ ngày sản xuất",
+    "image": "products/12_UrPGkRx.jpg",
+    "flavor_options": "vị vani",
+    "weight_options": "",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:23:05Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 14,
+  "fields": {
+    "name": "Bột Phát Triển Cân Nặng, Cơ Bắp MUSCLE MASS AFIT Tập Gym - Hàng chính hãng",
+    "slug": "13",
+    "price": "390.00",
+    "description": "🥛 MUSCLE MASS – SỮA TĂNG CÂN TĂNG CƠ CAO NĂNG LƯỢNG CHO NGƯỜI GẦY KHÓ HẤP THU\r\nMUSCLE MASS là sản phẩm sữa tăng cân tăng cơ chuyên biệt, giúp bạn tăng cân nhanh, tăng cơ hiệu quả, đặc biệt dành cho người gầy lâu năm, khó tăng cân, kém hấp thu hoặc vận động viên cần tăng thể lực. Với công thức giàu đạm, calo, carbohydrate cùng vitamin & khoáng chất thiết yếu, sản phẩm hỗ trợ tăng cơ nạc, không tích mỡ thừa.\r\n\r\n💥 ƯU ĐIỂM NỔI BẬT\r\n•\t✅ Giàu protein & năng lượng hỗ trợ tăng cân tối đa\r\n•\t✅ Không đậu nành – phù hợp người dị ứng hoặc kiêng đậu\r\n•\t✅ Không chứa đường tinh luyện, dễ hấp thu và tốt cho sức khỏe\r\n•\t✅ Tăng cơ – không tăng mỡ nhờ tỷ lệ dinh dưỡng cân đối\r\n\r\n🏋️♂️ CÔNG DỤNG CHÍNH\r\n•\tTăng cân nặng lành mạnh và đều đặn\r\n•\tGiúp phục hồi cơ bắp, nâng cao hiệu suất tập luyện\r\n•\tBổ sung dưỡng chất cần thiết giúp tăng sức bền & thể lực\r\n•\tHạn chế tình trạng ốm yếu, suy nhược, mất sức\r\n\r\n🍫 HƯƠNG VỊ HẤP DẪN\r\n•\tChocolate – Đậm vị cacao, dễ uống\r\n•\tVanilla – Thơm béo, pha nhanh, ngon miệng",
+    "image": "products/13_7WL12Yg.jpg",
+    "flavor_options": "vị chocolate",
+    "weight_options": "1 hộp-800gam",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:23:57Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 15,
+  "fields": {
+    "name": "Minch Creatine Powder Creatine Muscle Builder dành cho nam và nữ Bài tập tăng cường sức mạnh",
+    "slug": "14",
+    "price": "399.00",
+    "description": "Bột creatine - Với các thành phần siêu tinh khiết, bao gồm creatine axit tự do, hoàn toàn không có chất độn, carbs hoặc chất béo\r\n\r\nMuscle BUILDER - Lượng creatine chỉ có trong hai muỗng siêu đậm đặc đã được khoa học chứng minh để tăng sức mạnh, kích thước và hiệu suất của cơ bắp\r\n\r\nPhục HỒI NẤM NHANH HƠN - Công thức này nhanh chóng tăng cường khả năng tái tạo ATP của các tế bào cơ - nguồn năng lượng kỵ khí chính của chúng - vì vậy bạn có thể phục hồi nhanh hơn giữa các bộ\r\n\r\nTuyệt VỜI VỚI CÁC BỔ SUNG CÔNG VIỆC KHÁC - Cung cấp creatine siêu tinh khiết và axit tự do - vì vậy bạn có thể tránh đầy bụng và không bao giờ phải nạp hoặc chu kỳ. Xếp chồng tốt với các protein, BCAAs khác và trước khi tập luyện\r\n\r\n\r\n\r\nBổ SUNG CÔNG VIỆC HÀNG NGÀY - Pha 1 muỗng với 6 đến 8 oz nước hoặc pha 2 muỗng với 12 đến 16 oz nước. Uống 2 muỗng mỗi ngày. Uống 8 đến 10 cốc nước mỗi ngày để có sức khỏe tốt nói chung.",
+    "image": "products/14_MAVT4Nx.jpg",
+    "flavor_options": "vị banana",
+    "weight_options": "1 hộp-500gam",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:25:12Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 16,
+  "fields": {
+    "name": "1kg Bột Đậu Ngũ Cốc Tập Gym Yoga (Có ĐKKD + GCN ATTP)",
+    "slug": "15",
+    "price": "130.00",
+    "description": "Nhà Của Đậu - Tận Tâm Từng Hạt Nhỏ\r\n\r\n► Ngũ cốc hỗ trợ tập GYM/Yoga sẽ gồm 5 loại đậu chính, tuy nhiên bạn vẫn nên bổ sung thêm các loại hạt dinh dưỡng khác với tỉ lệ nhỏ để mang lại nhiều lợi ích hơn cho sức khỏe. Với công thức sau có tới 12 loại hạt sẽ cung cấp vitamin, protein và nhiều khoáng chất cần thiết cho hoạt động hàng ngày cũng như tập GYM. Ngoài ra khi sử dụng ngũ cốc còn giúp tim mạch bạn khỏe mạnh, làn da sẽ mịn màng ngừa mụn và không bị khô da:\r\n• Đậu Nành (còn gọi đậu tương): 36,5g protein/100g – (15%)\r\n• Đậu Đen – 24,2g protein/100g (15%)\r\n• Đậu Xanh – 23g protein/100g (15%)\r\n• Đậu Đỏ: 22g protein/100g – (15%)\r\n• Gạo lứt: Có nhiều vitamin B, E, chất xơ – (20%)\r\n• Óc chó, hạt sen, mè đen, yến mạch, hạnh nhân, hạt bí: Giàu omega3, giúp tăng cường trí nhớ, ngủ ngon hơn. (20%)\r\n\r\n►CÔNG DỤNG: Dùng cho người tập GYM, FITNESS, YOGA\r\n• Giúp tăng cơ, tăng sức bền, giúp cơ bắp rắn chắc. \r\n• Cung cấp chất xơ, protein, vitamin cho cơ thể giúp thanh nhiệt giải độc, chống táo bón, đẹp da, chống lão hoá. \r\n• Tăng cường hoạt động hệ tim mạch. Sử dụng hiệu quả trong tăng cân và giảm cân.\r\n• Bổ sung dưỡng chất cho người gầy . Giảm calo cho người béo",
+    "image": "products/15_34QFsKX.jpg",
+    "flavor_options": "vị vani",
+    "weight_options": "1 hôp-800gam",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:26:35Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 17,
+  "fields": {
+    "name": "GOLD CREATINE-CÁNG PHỒNG CƠ BẮP- HỖ TRỢ TĂNG CƠ NHANH- PHỤC HỒI- TĂNG HIỆU SUẤT TẬ",
+    "slug": "16",
+    "price": "255.00",
+    "description": "GOLD CREATINE HÃNG KEVIN LEVRONE CÓ 2 LOẠI :\r\n- DẠNG BỘT 300G KHÔNG MÙI VỊ\r\n- DẠNG VIÊN CÓ HƯƠNG VỊ BỔ SUNG 5G CREATINE/ 1 SERVING ( 5 VIÊN ) \r\n\r\n❌ CÂN NHẮC ANH EM LẦN ĐẦU SỬ DỤNG HOẶC NHÀ KHÔNG CÓ MÁY XAY NÊN CHỌN HÀNG BỘT MỊN . \r\n\r\nLỢI ÍCH CỦA CREATINE VỚI CƠ BẮP\r\n\r\n→ Creatine là một trong những dòng TPBS rất được anh em gymer không chỉ Việt Nam mà còn cả trên thế giới ưa chuộng và sử dụng, việc sử dụng Creatine thường xuyên đem lại rất nhiều lợi ích cho sức khỏe: \r\n\r\n↗️ TĂNG SỨC MẠNH: Creatine cung cấp ATP – một phân tử giúp dự trữ năng lượng cho tế bào và các cơ bắp. Việc sử dụng 3 - 5g Creatine mỗi ngày giúp gia tăng sức mạnh cơ bắp lên tới 15% \r\n\r\n↗️ TĂNG SỨC BỀN: Trong quá trình tập luyện, hàm lượng ATP có sẵn trong cơ thể sẽ bị giảm đi nhanh chóng, Creatine giúp bổ sung lại lượng ATP đã mất, từ đó giúp bạn có thêm năng lượng để tập luyện, cải thiện cường độ tập luyện bền bỉ hơn. \r\n\r\n↗️ TẶNG ĐỘ DÀY CƠ BẮP: Creatine được chứng minh giúp thúc đẩy sự hình thành các Protein tạo ra các sợi cơ mới, đồng thời Creatine cũng làm tăng hàm lượng nước trong cơ bắp, giúp tăng kích thước cơ nhanh chóng hơn.",
+    "image": "products/16_EVGchkO.jpg",
+    "flavor_options": "loại thường",
+    "weight_options": "1 hôp-800gam",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:27:35Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 18,
+  "fields": {
+    "name": "VEGAN PROTEIN- Sữa tăng cơ giảm mỡ Afit, giúp xây dựng cơ bắp",
+    "slug": "17",
+    "price": "400.00",
+    "description": "VEGAN PROTEIN là thực phẩm bổ sung protein hoàn hảo cho người ăn chay hoặc những người không hợp whey protein, dị ứng lactose.\r\nVới 21g đạm thực vật trên mỗi khẩu phần, VEGAN PROTEIN hỗ trợ xây dựng cơ bắp hiệu quả, tốt cho hệ tiêu hóa, không gây nóng trong hay nổi mụn.\r\nVEGAN PROTEIN chứa sự kết hợp hoàn hảo giữa protein từ đậu Hà Lan và nhiều loại hạt cao cấp, mang lại nhiều lợi ích chỉ trong một sản phẩm duy nhất.\r\n\r\n1. ƯU ĐIỂM CỦA SẢN PHẨM\r\n • 100% thuần thực vật\r\n • Không chứa đậu nành\r\n • Không chứa đường tinh luyện\r\n • Không chứa lactose\r\n\r\n2. CÔNG DỤNG CỦA SẢN PHẨM\r\n • Bổ sung nguồn protein tự nhiên giúp xây dựng và duy trì cơ bắp.\r\n • Hỗ trợ phục hồi cơ bắp sau tập luyện.\r\n • Tăng cường sức bền, cải thiện sức khỏe tổng thể.\r\n • Phù hợp với chế độ ăn thuần chay hoặc ăn kiêng.\r\n\r\n3. HƯƠNG VỊ\r\n • Chocolate\r\n • Vanilla\r\n\r\n4. PHÙ HỢP VỚI\r\n • Người tập gym, thể hình cần tăng lượng protein sạch.\r\n • Người ăn chay trường, thuần chay.\r\n • Người cần bổ sung đạm nhưng dị ứng với đậu nành hoặc lactose.",
+    "image": "products/17_C9xLtdd.jpg",
+    "flavor_options": "vị chocolate",
+    "weight_options": "1 hôp-600gam",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:29:16Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 19,
+  "fields": {
+    "name": "Thức Uống Năng Lượng Liquid Gel GU ENERGY - Bổ Sung Năng Lượng Khi Vận Động Thể Thao",
+    "slug": "18",
+    "price": "59.00",
+    "description": "THỨC UỐNG BỔ SUNG NĂNG LƯỢNG NGON MIỆNG | DINH DƯỠNG CHO SỰ BỀN BỈ. \r\nLiquid Energy Gels bổ sung năng lượng, cung cấp carbs tương tự gels nhưng với dạng lỏng, dễ uống và hấp thụ nhanh chóng.\r\nGiảm 10% khi mua 1 hộp 12 gói vị bất kỳ.\r\n\r\nKHI NÀO NÊN SỬ DỤNG LIQUID NĂNG LƯỢNG?\r\nTrước khi tập luyện\r\nĐói bụng trong qua trình tập\r\nMất nhiều mồ hôi\r\nPhục hồi cơ trong vòng 30 phút sau luyện tập\r\n\r\nSẢN PHẨM PHÙ HỢP CHO MÔN THỂ THAO NÀO? \r\nTập luyện sức bền như cardio, HIIT trong phòng tập thể dục. \r\nCác buổi long run hoặc tempo run\r\nTham gia marathon tại các cự ly đòi hỏi thời gian dài và sức bền.\r\n3 môn phối hợp\r\nCác môn thể thao có thời gian vận đồng trên 60 phút.",
+    "image": "products/19_Mgvqo6S.jpg",
+    "flavor_options": "loại thường",
+    "weight_options": "",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:30:16Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 20,
+  "fields": {
+    "name": "Bột Whey Protein Thực Vật Vegan Thuần Chay Hỗ Trợ Phát Triển Cơ Bắp Tập Gym",
+    "slug": "20",
+    "price": "249.00",
+    "description": "🥦 VEGAN PROTEIN –  THỰC VẬT THUẦN CHAY TỐI ƯU CHO CƠ BẮP\r\n✅ 100% THỰC VẬT – KHÔNG ĐẬU NÀNH – KHÔNG LACTOSE – KHÔNG ĐƯỜNG TINH LUYỆN\r\nVegan Protein là protein thực vật thuần chay, được thiết kế tối ưu cho người ăn chay, không dung nạp lactose. Với 21g protein sạch mỗi khẩu phần, sản phẩm hỗ trợ cho cơ nạc, đẩy lùi mỡ, phục hồi sau tập, không gây nóng trong hay nổi mụn.\r\n\r\n🌱 ĐIỂM NỔI BẬT CỦA VEGAN PROTEIN\r\n•\t✅ 100% thuần thực vật, không biến đổi gen (Non-GMO)\r\n•\t✅ Không đậu nành – phù hợp người dị ứng hoặc không dùng đậu nành\r\n•\t✅ Không lactose – thân thiện với hệ tiêu hóa\r\n•\t✅ Không đường tinh luyện – kiểm soát năng lượng tốt\r\n\r\n💪 CÔNG DỤNG CHÍNH\r\n•\t🌿 Bổ sung đạm thực vật tự nhiên, hỗ trợ xây dựng và duy trì khối cơ nạc\r\n•\t🏋️♂️ Hỗ trợ phục hồi cơ bắp nhanh chóng sau tập luyện\r\n•\t🔋 Tăng sức bền, cải thiện hiệu suất tập luyện\r\n•\t✅ Phù hợp với chế độ ăn chay, thuần chay, ăn kiêng không mỡ thừa",
+    "image": "products/20_ifNet46.jpg",
+    "flavor_options": "loại thường",
+    "weight_options": "1 hôp-800gam",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:31:07Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 21,
+  "fields": {
+    "name": "Băng quấn cổ tay Aolikes,Đai quấn bảo vệ cổ tay hỗ trợ nẹp xương ống khớp cổ tay AOLIKES 7937",
+    "slug": "21",
+    "price": "24.00",
+    "description": "Băng quấn cổ tay Aolikes,Đai quấn bảo vệ cổ tay hỗ trợ nẹp xương ống khớp cổ tay AOLIKES 7937 không phân biệt tay trái-phải\r\n\r\n\r\n\r\nCHẤT LIỆU VÀ KÍCH THƯỚC:\r\n\r\nChất liệu : SBR + Vải không dệt Polypropylene +polyester + spandex \r\n\r\nChất liệu vải không dệt cao cấp thoáng khí với các lỗ thông hơi giúp thấm hút mồ hôi tốt, tạo cảm giác thông thoáng, không bí nóng như nhiểu sản phẩm khác\r\n\r\nChiều dài 40cm/Bề ngang 8.5cm",
+    "image": "products/21_Xmn7n32.jpg",
+    "flavor_options": "đen",
+    "weight_options": "",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:33:06Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 22,
+  "fields": {
+    "name": "【🔥2 cái/Freeship🔥】Găng Tay Tập GYM, Dây kéo lưng Lifting Straps đa năng hỗ trợ tập Gym, Deadlift, lên xà, nâng tạ",
+    "slug": "22",
+    "price": "36.00",
+    "description": "GĂNG TAY TẬP GYM HỞ MU BÀN TAY\r\n\r\n- Là sản phẩm kết hợp 2 trong 1 giữa Găng tay và Dây kéo lưng\r\n\r\n- Sản phẩm chuyên dụng cho các bạn tập gym, tập thể hình, xà đơn\r\n\r\n- Hỗ trợ Deadlift, lên xà, nâng tạ - Trợ lực bàn tay và chống chai tay hiệu quả\r\n\r\n- Các bài tập có thể sửdụng sản phẩm: Bài tập hít xà đơn - Bài tập tay - Bài tập Dead-lift - Bài kéo xô...",
+    "image": "products/22_qK6wHHX.jpg",
+    "flavor_options": "đen",
+    "weight_options": "",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:34:22Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 23,
+  "fields": {
+    "name": "Găng tay tập gym chống trượt, bền bỉ cho nâng tạ và đạp xe.",
+    "slug": "23",
+    "price": "29.00",
+    "description": "✅ Tập trung vào hàng hóa chính hãng, cung cấp giá cả và dịch vụ tốt hơn!\r\n\r\n\r\n\r\n✅ Mua sắm một chỗ! Cửa hàng của chúng tôi có nhiều danh mục, bao gồm thời trang, nội thất, trang trí, quần áo, sản phẩm điện tử.\r\n\r\n\r\n\r\n✅ DỊCH VỤ TRỰC TUYẾN. Nếu bạn có bất kỳ vấn đề hay câu hỏi nào, hãy liên hệ với chúng tôi trước! Chúng tôi sẽ mang đến cho bạn trải nghiệm mua sắm tuyệt vời. [Tính năng]\r\n\r\n\r\n\r\nGăng tay bảo hộ PALM bảo vệ tay khỏi va chạm và mài mòn.\r\n\r\n\r\n\r\nThiết kế CỔ TAY có thể điều chỉnh mang lại cảm giác vừa vặn và hỗ trợ.\r\n\r\n\r\n\r\nĐộ co giãn cao, kháng mài mòn, thoáng khí, thấm mồ hôi, nhẹ nhàng.\r\n\r\n\r\n\r\nPhù hợp cho đạp xe, leo núi, trượt patin, tập luyện và các môn thể thao khác.",
+    "image": "products/23_drC9YmO.jpg",
+    "flavor_options": "đen",
+    "weight_options": "",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:35:13Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 24,
+  "fields": {
+    "name": "Đai Arm Blaster | Thanh Hỗ Trợ Tập Tay Trước Tập Thể Thao Tập Gym",
+    "slug": "24",
+    "price": "99.00",
+    "description": "CÔNG DỤNG SẢN PHẨM:\r\nĐai arm blaster hay còn gọi là dụng cụ tập tay trước giúp bạn có form tập tay trước cực đẹp và chắc chắn, nhờ phần khủy tay được đặt cố định lên giá đỡ, cơ tay trước của bạn sẽ được hình thành chính xác mà không lo sai lệch mất cân đối.\r\n\r\nHỗ trợ tập tay trước đúng kỹ thuật\r\nSản phẩm Đai Arm Blaster được thiết kế cong giúp cô lập đực 2 nhóm cơ vai và tay, đặc biệt cố định tuyệt đối cơ tay\r\nGiúp gymer tập luyện cường độ cao, tạ nặng an toàn hạn chế chấn thương\r\n\r\nTHÔNG TIN VỀ DỤNG CỤ HỖ TRỢ TẬP TAY ARM BLASTER::::\r\nChất liệu: Thép, dây đeo bằng vải nilong\r\nKích thước: 60x 8.5cm dày 0.3cm\r\nDây đeo điều chỉnh dài 1,2m\r\nKhối lượng: 1.1kg\r\nNăm sản xuất : 2021\r\nKhủy tay và phần đeo cổ miếng đệm bằng EVA",
+    "image": "products/24_9yCi6un.jpg",
+    "flavor_options": "",
+    "weight_options": "",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:36:14Z"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 25,
+  "fields": {
+    "name": "Phụ kiện hỗ trợ tập gym",
+    "slug": "25",
+    "price": "55.00",
+    "description": "bền\r\nđẹp\r\nchắc chắn",
+    "image": "products/25_Av3VaLS.jpg",
+    "flavor_options": "",
+    "weight_options": "",
+    "is_featured": false,
+    "created_at": "2025-06-08T16:38:55Z"
+  }
+}
+]
