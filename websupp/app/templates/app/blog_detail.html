@@ -1,10 +1,17 @@
 {% extends 'app/base.html' %}
 
 {% block content %}
-<div class="max-w-3xl mx-auto px-4 py-10">
+<!-- Section có ảnh nền mờ -->
+<section class="relative py-12 bg-cover bg-center" style="background-image: url('/static/images/gym.jpg');">
+  <!-- Overlay mờ -->
+  <div class="absolute inset-0 bg-black/30 backdrop-blur-sm z-0"></div>
+
+  <!-- Nội dung chính -->
+  <div class="relative z-10 max-w-3xl mx-auto px-4 py-10 bg-white/80 backdrop-blur-md rounded-xl shadow-xl">
     <h1 class="text-3xl font-bold text-red-600 mb-6">{{ post.title }}</h1>
     <img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-64 object-cover rounded mb-6">
     <p class="text-gray-800 text-lg leading-relaxed whitespace-pre-line">{{ post.content }}</p>
     <a href="{% url 'blog' %}" class="mt-8 inline-block text-blue-600 hover:underline">← Quay lại danh sách</a>
-</div>
+  </div>
+</section>
 {% endblock %}
