@@ -2,16 +2,27 @@
 {% include 'components/chat_widget.html' %}
 
 {% block content %}
-<h1 class="text-3xl font-bold mb-6 text-center text-green-700">Blog Tư Vấn Sức Khỏe</h1>
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
-    {% for post in posts %}
-    <article class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-        <img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-48 object-cover rounded mb-4">
-        <h2 class="text-xl font-semibold text-red-600">{{ post.title }}</h2>
-        <p class="text-gray-600 text-sm mt-2">{{ post.content|truncatewords:25 }}</p>
-        <a href="{% url 'blog_detail' post.id %}" class="text-blue-500 text-sm mt-4 inline-block hover:underline">Xem thêm</a>
-    </article>
-    {% endfor %}
-</div>
+<!-- Wrapper có ảnh nền và lớp phủ -->
+<section class="relative py-12 bg-cover bg-center" style="background-image: url('/static/images/gym.jpg');">
+  <!-- Overlay mờ -->
+  <div class="absolute inset-0 bg-black/30 backdrop-blur-sm z-0"></div>
+
+  <!-- Nội dung chính -->
+  <div class="relative z-10">
+    <h1 class="text-3xl font-bold mb-6 text-center text-green-200">Blog Tư Vấn Sức Khỏe</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 max-w-6xl mx-auto">
+      {% for post in posts %}
+      <article class="bg-white/70 backdrop-blur-md p-6 rounded-2xl shadow hover:shadow-lg transition">
+          <img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-48 object-cover rounded mb-4">
+          <h2 class="text-xl font-semibold text-red-600">{{ post.title }}</h2>
+          <p class="text-gray-700 text-sm mt-2">{{ post.content|truncatewords:25 }}</p>
+          <a href="{% url 'blog_detail' post.id %}" class="text-blue-500 text-sm mt-4 inline-block hover:underline">Xem thêm</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 {% endblock %}

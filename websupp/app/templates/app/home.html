@@ -12,10 +12,13 @@
      class="absolute inset-0 w-full h-full object-cover opacity-20 z-0" />
 
   <!-- Lớp overlay chữ -->
-  <div class="relative z-10">
+  <div class="relative z-10 animate-fade-in-up text-white">
     <h1 class="text-6xl font-extrabold tracking-widest text-red-600">STRONG</h1>
-    <p class="mt-6 text-xl font-bold uppercase">Beat the routine. Train at the caliber of world champions</p>
+    <p class="mt-6 text-xl font-bold uppercase animate-pulse">Beat the routine. Train at the caliber of world champions</p>
     <p class="mt-2 text-lg font-light">Get in the best shape of your life.</p>
+    <a href="#featured" class="mt-6 inline-block bg-red-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-red-700 transition duration-300 shadow-lg">
+      Bắt đầu ngay
+    </a>
   </div>
 </section>
 
@@ -23,10 +26,10 @@
 <section class="relative h-[70vh] bg-cover bg-center flex items-center justify-center text-center mt-12"
          style="background-image: url('{% static 'images/testimonial-bg.png' %}');">
   <!-- Overlay -->
-  <div class="absolute inset-0 bg-black opacity-50"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/30"></div>
 
   <!-- Text Content -->
-  <div class="relative z-10 max-w-3xl px-8 py-10 bg-black/60 rounded-3xl shadow-2xl backdrop-blur-md text-white">
+  <div class="relative z-10 max-w-3xl px-8 py-10 bg-black/60 rounded-3xl shadow-2xl backdrop-blur-md text-white animate-fade-in-up">
     <p class="text-4xl md:text-5xl font-bold mb-6 leading-snug">
       <span class="text-6xl font-serif text-red-500 align-top">“</span>
       SINCE STARTING THE OVER 60'S MAT CLASS AT CREATE, I AM MUCH MORE AWARE OF MY BODY, HOW I MOVE AND MY POSTURE.
@@ -34,19 +37,17 @@
     </p>
     <p class="text-base tracking-wider font-light uppercase mt-2">KRYSTINA RYNES, PARK WIMBLEDON</p>
   </div>
-
 </section>
 
 <!-- Sản phẩm nổi bật -->
-<!-- Sản phẩm nổi bật -->
-<section class="py-12 bg-black text-white">
-  <h2 class="text-center text-2xl font-bold mb-8">SẢN PHẨM NỔI BẬT</h2>
+<section id="featured" class="py-12 bg-black text-white">
+  <h2 class="text-center text-3xl font-bold mb-8 animate-fade-in-up">SẢN PHẨM NỔI BẬT</h2>
   <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
     {% for product in featured_products %}
-      <div class="bg-white text-black rounded-lg overflow-hidden shadow-md hover:scale-105 duration-300">
-        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-full h-48 object-cover">
+      <div class="group bg-white text-black rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
         <div class="p-4">
-          <h3 class="text-lg font-semibold mb-2">{{ product.name }}</h3>
+          <h3 class="text-lg font-semibold mb-2 group-hover:text-red-600 transition-colors">{{ product.name }}</h3>
           <p class="text-sm text-gray-600 mb-4">{{ product.description|truncatechars:80 }}</p>
           <p class="font-bold text-red-600 mb-2">{{ product.price|floatformat:0 }}₫</p>
           <a href="{% url 'product_detail' product.id %}" class="text-sm text-blue-500 hover:underline">Xem chi tiết</a>
@@ -56,7 +57,35 @@
   </div>
 </section>
 
+<!-- Marquee Thông báo -->
+<div class="bg-red-600 py-2 overflow-hidden whitespace-nowrap">
+  <p class="text-white text-sm animate-marquee">🔥 Ưu đãi đặc biệt trong tháng 6 - Giảm giá 30% cho mọi sản phẩm! 🔥</p>
+</div>
 
+<!-- Custom CSS animation -->
+<style>
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+}
 
+@keyframes marquee {
+  0% { transform: translateX(100%) }
+  100% { transform: translateX(-100%) }
+}
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 12s linear infinite;
+}
+</style>
 
 {% endblock %}
