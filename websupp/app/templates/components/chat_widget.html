@@ -1,5 +1,5 @@
 <!-- Nút mở khung chat -->
-<button id="toggleChat" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 z-50">
+<button id="toggleChat" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 z-50 hover:bounce">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
          stroke="currentColor">
         <path d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4-4.03 7-9 7-1.11 0-2.18-.13-3.17-.36A1.99 1.99 0 015 19l-3 1 1-3a2 2 0 01.36-2.17C3.13 14.18 3 13.11 3 12c0-5 5.03-9 9-9s9 4 9 9z"
@@ -31,7 +31,17 @@
 <!-- JavaScript điều khiển -->
 <script>
     document.getElementById("toggleChat").addEventListener("click", () => {
-        document.getElementById("chatBox").classList.toggle("hidden");
+        const chatBox = document.getElementById("chatBox");
+        if (chatBox.classList.contains("hidden")) {
+            chatBox.classList.remove("hidden");
+            chatBox.classList.add("slide-in");
+        } else {
+            chatBox.classList.add("slide-out");
+            setTimeout(() => {
+                chatBox.classList.add("hidden");
+                chatBox.classList.remove("slide-out");
+            }, 300);
+        }
     });
 
     document.getElementById("closeChat").addEventListener("click", () => {
@@ -68,6 +78,11 @@
             log.innerHTML += `<div class="mb-1 text-red-600"><strong>Lỗi:</strong> Không thể kết nối server.</div>`;
         }
 
+        // Add animation to new messages
+        const messages = log.getElementsByTagName('div');
+        const lastMessage = messages[messages.length - 1];
+        lastMessage.style.animation = 'slideIn 0.3s ease-out';
+
         log.scrollTop = log.scrollHeight;
     });
 
@@ -96,5 +111,14 @@
     chatBox.addEventListener('mouseup', () => {
         const log = document.getElementById("chatLog");
         log.scrollTop = log.scrollHeight;
+    });
+
+    // Add bounce effect on hover
+    document.getElementById("toggleChat").addEventListener("mouseover", function() {
+        this.classList.add("bounce");
+    });
+
+    document.getElementById("toggleChat").addEventListener("animationend", function() {
+        this.classList.remove("bounce");
     });
 </script>

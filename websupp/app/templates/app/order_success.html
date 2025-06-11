@@ -1,0 +1,60 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<div class="min-h-screen bg-gray-100 py-12">
+    <div class="max-w-3xl mx-auto px-4">
+        <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+            <!-- Success Icon -->
+            <div class="flex justify-center mb-6">
+                <div class="rounded-full bg-green-100 p-4">
+                    <svg class="h-12 w-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Success Message -->
+            <h2 class="text-center text-2xl font-bold text-gray-800 mb-4">
+                Đặt hàng thành công!
+            </h2>
+            
+            <!-- Order Details -->
+            <div class="text-center text-gray-600 mb-8">
+                <p>Mã đơn hàng: <span class="font-semibold">#{{ order.id }}</span></p>
+                <p class="mt-2">Cảm ơn bạn đã đặt hàng. Chúng tôi sẽ sớm xử lý đơn hàng của bạn.</p>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="border-t border-gray-200 pt-6">
+                <h3 class="font-semibold text-gray-800 mb-4">Chi tiết đơn hàng:</h3>
+                <div class="space-y-4">
+                    {% for item in order.items.all %}
+                    <div class="flex justify-between">
+                        <span>{{ item.product.name }} x {{ item.quantity }}</span>
+                        <span>{{ item.get_total_price }} đ</span>
+                    </div>
+                    {% endfor %}
+                    <div class="border-t border-gray-200 pt-4 font-semibold">
+                        <div class="flex justify-between">
+                            <span>Tổng cộng:</span>
+                            <span>{{ order.total_price }} đ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="{% url 'home' %}" 
+                   class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition-colors">
+                    Tiếp tục mua sắm
+                </a>
+                <a href="{% url 'order_detail' order.id %}" 
+                   class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition-colors">
+                    Xem chi tiết đơn hàng
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
