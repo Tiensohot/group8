@@ -77,11 +77,14 @@
             background: linear-gradient(to right, #d62828, #f2541b);
         }
     </style>
+
+    <!-- Thêm SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
 <div class="container">
-    <form method="post" class="form-container mx-auto max-width-md" action="{% url 'checkout' %}">
+    <form method="post" class="form-container mx-auto max-width-md" id="checkoutForm" action="{% url 'checkout' %}">
         {% csrf_token %}
 
         <h2 class="mb-4"><span>🏋️‍♂️</span> Xác nhận đơn hàng</h2>
@@ -134,11 +137,35 @@
         </div>
 
         <!-- Nút đặt hàng -->
-        <button type="submit" class="btn btn-confirm">
+        <button type="submit" class="btn btn-confirm" onclick="showSuccessPopup(event)">
             🛒 Xác nhận đặt hàng
         </button>
     </form>
 </div>
 
+<!-- Thêm script ở cuối body -->
+<script>
+function showSuccessPopup(event) {
+    event.preventDefault(); // Ngăn form submit ngay lập tức
+    
+    // Kiểm tra form hợp lệ
+    const form = document.getElementById('checkoutForm');
+    if (form.checkValidity()) {
+        Swal.fire({
+            title: 'Đặt hàng thành công!',
+            text: 'Cảm ơn bạn đã mua hàng của nhóm 8. Chúng tôi sẽ sớm liên hệ với bạn.',
+            icon: 'success',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#e63946'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                form.submit(); // Submit form sau khi click OK
+            }
+        });
+    } else {
+        form.reportValidity(); // Hiển thị validation errors
+    }
+}
+</script>
 </body>
 </html>

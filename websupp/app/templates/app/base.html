@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="stylesheet" href="{% static 'app/css/animations.css' %}">
 </head>
 <!-- Nút mở chat -->
 <!-- Chat Widget -->
@@ -70,7 +71,7 @@
 
 
 <!-- Nội dung trang -->
-<main class="p-6 bg-white dark:bg-black text-black dark:text-white min-h-[60vh]">
+<main class="p-6 bg-white dark:bg-black text-black dark:text-white min-h-[60vh] page-transition">
     {% block content %}{% endblock %}
 </main>
 
@@ -91,6 +92,25 @@
                 searchForm.classList.add("hidden");
             }
         });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add click handler to all internal links
+        document.querySelectorAll('a[href^="/"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (!e.ctrlKey && !e.shiftKey) {
+                    e.preventDefault();
+                    document.body.style.opacity = '0';
+                    setTimeout(() => {
+                        window.location = this.href;
+                    }, 300);
+                }
+            });
+        });
+
+        // Fade in on page load
+        document.body.style.opacity = '1';
+        document.body.style.transition = 'opacity 0.3s ease-in-out';
     });
 </script>
 
